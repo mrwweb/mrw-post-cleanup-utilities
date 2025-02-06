@@ -1,0 +1,13 @@
+{
+  "name": "mrw-post-cleanup-utilities",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "Mark Root-Wiley, MRW Web Design",
+  "authorURI": "https://MRWweb.com",
+  "scripts": {
+    "start": "wp-scripts start src/js/index.js --output-path=js --output-filename=index.js"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^28.6.0"
+  }
+}

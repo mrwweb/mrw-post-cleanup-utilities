@@ -1,0 +1,1 @@
+// todo: add a new button that removes line breaks from all blocks or just paragraphs
