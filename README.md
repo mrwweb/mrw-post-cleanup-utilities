@@ -20,6 +20,7 @@ A WordPress plugin that helps clean up posts with poor formatting.
 - Add icons for each button to help differentiate
 - Move features into separate sidebar with collapsible panels
 - Add Github-friendly readme in favorite of plugin repo-style readme
+- Bump browsers list (no changes when compiling)
 
 ### 0.1.0
 
