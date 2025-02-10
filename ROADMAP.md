@@ -6,11 +6,13 @@
 
 - [ ] Remove line breaks (can I just do this as a replace on the editor contents rather than block-by-block?)
 - [ ] Remove underlines
+- [ ] Replace all non-breaking spaces with regular spaces
 
 ### Low Priority
 
 - [ ] Convert fake lists to real lists
 - [ ] (Maybe?) Merge consecutive lists into a single list?
+- [ ] Consider a find-replace feature?
 
 ## Cleanup / Tech Debt
 
