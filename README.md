@@ -14,7 +14,7 @@ A WordPress plugin that helps clean up posts with poor formatting.
 
 ## Changelog
 
-See [ROADMAP.md] for potential future features (sponsorships accepted for feature requests).
+See the [plugin roadmap](ROADMAP.md) for potential future features (sponsorships accepted for feature requests).
 
 ### 0.2.0 (10 Feb, 2025)
 
