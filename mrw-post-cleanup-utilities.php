@@ -5,8 +5,7 @@
  * Author:          Mark Root-Wiley, MRW Web Design
  * Author URI:      https://MRWweb.com
  * Text Domain:     mrw-post-cleanup-utilities
- * Domain Path:     /languages
- * Version:         0.1.0
+ * Version:         0.2.0
  *
  * @package         Mrw_Post_Cleanup_Utilities
  */

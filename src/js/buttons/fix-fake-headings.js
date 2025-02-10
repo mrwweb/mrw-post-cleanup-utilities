@@ -83,7 +83,7 @@ function FixFakeHeadingsButton(attributes) {
 		<Button
 			variant="secondary"
 			text="Fix Fake Headings"
-			icon="update"
+			icon="heading"
 			__nextHasNoMarginBottom={true}
 			isDestructive={true}
 			onClick={makeRealHeadings}
