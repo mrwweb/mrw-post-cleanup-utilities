@@ -9,14 +9,11 @@ import { createBlock, getBlockContent } from "@wordpress/blocks";
 function ResetHeadingLevelsButton(attributes) {
 	let { level } = attributes;
 	
-	/* Lesson learned: React hooks must be called in the root of the functional compontent! */
-	/* See: https://react.dev/warnings/invalid-hook-call-warning#breaking-rules-of-hooks
-	and See: https://developer.wordpress.org/news/2024/03/28/how-to-work-effectively-with-the-useselect-hook/#but-call-them-outside-when-you-re-in-an-event-handler */
-	/* select all blocks in the body of the wordpress block editor with useSelect */
 	const blocks = useSelect(
 		(select) => select(blockEditorStore).getBlocks(),
 		[],
 	);
+	
 	const { replaceBlock } = useDispatch(blockEditorStore);
 
 	function resetHeadingLevels() {

@@ -129,7 +129,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function PromoteHeadingLevels(attributes) {
-  /* select all blocks in the body of the wordpress block editor with useSelect */
   const blocks = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.useSelect)(select => select(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.store).getBlocks(), []);
   const {
     replaceBlock
@@ -145,7 +144,6 @@ function PromoteHeadingLevels(attributes) {
     }
   }
   function PromoteHeadingLevel(block) {
-    console.log(block.attributes.level);
     const blockContent = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.getBlockContent)(block);
     const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.createBlock)("core/heading", {
       ...block.attributes,
@@ -201,11 +199,6 @@ function ResetHeadingLevelsButton(attributes) {
   let {
     level
   } = attributes;
-
-  /* Lesson learned: React hooks must be called in the root of the functional compontent! */
-  /* See: https://react.dev/warnings/invalid-hook-call-warning#breaking-rules-of-hooks
-  and See: https://developer.wordpress.org/news/2024/03/28/how-to-work-effectively-with-the-useselect-hook/#but-call-them-outside-when-you-re-in-an-event-handler */
-  /* select all blocks in the body of the wordpress block editor with useSelect */
   const blocks = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.useSelect)(select => select(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.store).getBlocks(), []);
   const {
     replaceBlock

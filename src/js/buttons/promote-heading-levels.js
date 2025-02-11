@@ -7,11 +7,12 @@ import { store as blockEditorStore } from "@wordpress/block-editor";
 import { createBlock, getBlockContent } from "@wordpress/blocks";
 
 function PromoteHeadingLevels(attributes) {
-	/* select all blocks in the body of the wordpress block editor with useSelect */
+
 	const blocks = useSelect(
 		(select) => select(blockEditorStore).getBlocks(),
 		[],
 	);
+	
 	const { replaceBlock } = useDispatch(blockEditorStore);
 
 	function PromoteHeadingLevels() {
@@ -27,7 +28,6 @@ function PromoteHeadingLevels(attributes) {
 	}
 
 	function PromoteHeadingLevel(block) {
-		console.log(block.attributes.level);
 		const blockContent = getBlockContent(block);
 		const newBlock = createBlock("core/heading", {
 			...block.attributes,
