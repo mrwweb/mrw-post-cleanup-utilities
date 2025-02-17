@@ -2,7 +2,7 @@ import { useSelect, useDispatch } from "@wordpress/data";
 import { store as blockEditorStore } from "@wordpress/block-editor";
 import { Button } from "@wordpress/components";
 
-export function BlockTransformButton(props) {
+function BlockTransformButton(props) {
     const { blockTest, blockTransform, buttonText, buttonIcon } = props;
 
     /*
@@ -45,3 +45,5 @@ export function BlockTransformButton(props) {
             />
     );
 }
+
+export default BlockTransformButton;

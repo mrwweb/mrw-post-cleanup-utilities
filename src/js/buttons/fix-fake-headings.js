@@ -1,21 +1,12 @@
-/*
- * Dependencies.
- */
 import { createBlock, getBlockContent } from "@wordpress/blocks";
-import { BlockTransformButton } from "../compontents/block-transform-button";
+import BlockTransformButton from "../compontents/block-transform-button";
 
-function FixFakeHeadingsButton(attributes) {
+export default function FixFakeHeadingsButton(attributes) {
 	let { level } = attributes;
 	if (level === 2) {
 		level = undefined;
 	}
 
-	/**
-	 * Determine if block is a faux heading that is bolded
-	 *
-	 * @param {*} block given a WordPress block object, this determines if it's a paragraph that is completely bolded
-	 * @returns bool
-	 */
 	function isFakeHeading(block) {
 		if (block?.name !== "core/paragraph") {
 			return false;
@@ -64,5 +55,3 @@ function FixFakeHeadingsButton(attributes) {
 		/>
 	);
 }
-
-export default FixFakeHeadingsButton;

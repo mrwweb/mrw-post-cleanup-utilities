@@ -10,16 +10,13 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ FixFakeHeadingsButton)
 /* harmony export */ });
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../compontents/block-transform-button */ "./src/js/compontents/block-transform-button.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
-/*
- * Dependencies.
- */
 
 
 
@@ -30,13 +27,6 @@ function FixFakeHeadingsButton(attributes) {
   if (level === 2) {
     level = undefined;
   }
-
-  /**
-   * Determine if block is a faux heading that is bolded
-   *
-   * @param {*} block given a WordPress block object, this determines if it's a paragraph that is completely bolded
-   * @returns bool
-   */
   function isFakeHeading(block) {
     if (block?.name !== "core/paragraph") {
       return false;
@@ -61,14 +51,13 @@ function FixFakeHeadingsButton(attributes) {
     });
     return newBlock;
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_1__.BlockTransformButton, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     blockTest: isFakeHeading,
     blockTransform: convertParagraphToHeading,
     buttonText: "Fix Fake Headings",
     buttonIcon: "heading"
   });
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FixFakeHeadingsButton);
 
 /***/ }),
 
@@ -80,16 +69,13 @@ function FixFakeHeadingsButton(attributes) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ PromoteHeadingLevels)
 /* harmony export */ });
-/* harmony import */ var _compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../compontents/block-transform-button */ "./src/js/compontents/block-transform-button.js");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../compontents/block-transform-button */ "./src/js/compontents/block-transform-button.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
-/*
- * Dependencies.
- */
 
 
 
@@ -98,8 +84,8 @@ function PromoteHeadingLevels(attributes) {
     return block?.name === "core/heading" && block.attributes.level > 2;
   }
   function PromoteHeadingLevel(block) {
-    const blockContent = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.getBlockContent)(block);
-    const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)("core/heading", {
+    const blockContent = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.getBlockContent)(block);
+    const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)("core/heading", {
       ...block.attributes,
       content: blockContent
       // regex for any number
@@ -108,14 +94,13 @@ function PromoteHeadingLevels(attributes) {
     });
     return newBlock;
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_0__.BlockTransformButton, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     blockTest: isHeadingButNot2,
     blockTransform: PromoteHeadingLevel,
     buttonText: "Promote Headings",
     buttonIcon: "arrow-up-alt"
   });
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PromoteHeadingLevels);
 
 /***/ }),
 
@@ -127,16 +112,13 @@ function PromoteHeadingLevels(attributes) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */   "default": () => (/* binding */ ResetHeadingLevelsButton)
 /* harmony export */ });
-/* harmony import */ var _compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../compontents/block-transform-button */ "./src/js/compontents/block-transform-button.js");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../compontents/block-transform-button */ "./src/js/compontents/block-transform-button.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
-/*
- * Dependencies.
- */
 
 
 
@@ -148,8 +130,8 @@ function ResetHeadingLevelsButton(attributes) {
     return block?.name === "core/heading" && block.attributes.level !== level;
   }
   function resetHeadingLevel(block) {
-    const blockContent = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.getBlockContent)(block);
-    const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)("core/heading", {
+    const blockContent = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.getBlockContent)(block);
+    const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)("core/heading", {
       ...block.attributes,
       content: blockContent
       // regex for any number
@@ -158,14 +140,13 @@ function ResetHeadingLevelsButton(attributes) {
     });
     return newBlock;
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_0__.BlockTransformButton, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_1__["default"], {
     blockTest: isHeadingButNotSelectedLevel,
     blockTransform: resetHeadingLevel,
     buttonText: "Make all headings H" + level + "s",
     buttonIcon: "image-rotate"
   });
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ResetHeadingLevelsButton);
 
 /***/ }),
 
@@ -177,7 +158,7 @@ function ResetHeadingLevelsButton(attributes) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   BlockTransformButton: () => (/* binding */ BlockTransformButton)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
 /* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_0__);
@@ -235,6 +216,52 @@ function BlockTransformButton(props) {
     variant: "secondary"
   });
 }
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BlockTransformButton);
+
+/***/ }),
+
+/***/ "./src/js/compontents/sidebar-panel-section.js":
+/*!*****************************************************!*\
+  !*** ./src/js/compontents/sidebar-panel-section.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SidebarPanelSection)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function SidebarPanelSection(props) {
+  const {
+    panelName,
+    title,
+    icon,
+    description,
+    children
+  } = props;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.PanelBody, {
+    name: panelName,
+    title: title,
+    className: panelName,
+    icon: icon,
+    initialOpen: false,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      style: {
+        display: "flex",
+        gap: "12px",
+        flexDirection: "column"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+        children: description
+      }), children]
+    })
+  });
+}
 
 /***/ }),
 
@@ -254,15 +281,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _buttons_fix_fake_headings__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./buttons/fix-fake-headings */ "./src/js/buttons/fix-fake-headings.js");
-/* harmony import */ var _buttons_reset_heading_levels__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./buttons/reset-heading-levels */ "./src/js/buttons/reset-heading-levels.js");
-/* harmony import */ var _buttons_promote_heading_levels__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./buttons/promote-heading-levels */ "./src/js/buttons/promote-heading-levels.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__);
-/* Thank you, Aurooba! https://github.com/createwithrani/quickpost/blob/develop/src/index.js */
-/**
- * WordPress dependencies.
- */
+/* harmony import */ var _compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./compontents/sidebar-panel-section */ "./src/js/compontents/sidebar-panel-section.js");
+/* harmony import */ var _buttons_fix_fake_headings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./buttons/fix-fake-headings */ "./src/js/buttons/fix-fake-headings.js");
+/* harmony import */ var _buttons_reset_heading_levels__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./buttons/reset-heading-levels */ "./src/js/buttons/reset-heading-levels.js");
+/* harmony import */ var _buttons_promote_heading_levels__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./buttons/promote-heading-levels */ "./src/js/buttons/promote-heading-levels.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
+/* WordPress dependencies */
 
 
 
@@ -272,93 +297,56 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const CleanupUtilitiesSidebar = () => {
   const [fakeHeadingsLevel, setFakeHeadingsLevel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(2);
   const [resetHeadingsLevel, setResetHeadingsLevel] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(2);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(_wordpress_editor__WEBPACK_IMPORTED_MODULE_0__.PluginSidebar, {
+  const headingLevels = [{
+    label: "2",
+    value: 2
+  }, {
+    label: "3",
+    value: 3
+  }, {
+    label: "4",
+    value: 4
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_editor__WEBPACK_IMPORTED_MODULE_0__.PluginSidebar, {
     name: "mrw-post-cleanup-utilities",
     title: "Post Cleanup Utilities",
     icon: "admin-tools",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
       name: "mrw-fix-headings",
       title: "Fix Fake Headings",
-      className: "mrw-fix-headings",
-      initialOpen: false,
       icon: "heading",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-        style: {
-          display: "flex",
-          gap: "12px",
-          flexDirection: "column"
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
-          children: "This button will find any paragraphs that are completely bolded and turn them into headings. By default, headings are level 2 (main subsections), but many pages (especially Guides) may benefit from conversion to Heading 3 or Heading 4 and then updating just a few Headings to level 2/3."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
-          label: "Heading Level",
-          value: fakeHeadingsLevel,
-          options: [{
-            label: "2",
-            value: 2
-          }, {
-            label: "3",
-            value: 3
-          }, {
-            label: "4",
-            value: 4
-          }],
-          onChange: value => setFakeHeadingsLevel(parseInt(value))
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_buttons_fix_fake_headings__WEBPACK_IMPORTED_MODULE_3__["default"], {
-          level: fakeHeadingsLevel
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+      description: "This button will find any paragraphs that are completely\r bolded and turn them into headings. By default, headings are\r level 2 (main subsections), but many pages (especially\r Guides) may benefit from conversion to Heading 3 or Heading\r 4 and then updating just a few Headings to level 2/3.",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+        label: "Heading Level",
+        value: fakeHeadingsLevel,
+        options: headingLevels,
+        onChange: value => setFakeHeadingsLevel(parseInt(value))
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_buttons_fix_fake_headings__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        level: fakeHeadingsLevel
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
       name: "mrw-reset-headings",
       title: "Reset Heading Levels",
-      className: "mrw-reset-headings",
-      initialOpen: false,
       icon: "image-rotate",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-        style: {
-          display: "flex",
-          gap: "12px",
-          flexDirection: "column"
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
-          children: "Change all heading blocks to the selected level."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
-          label: "Heading Level",
-          value: resetHeadingsLevel,
-          options: [{
-            label: "2",
-            value: 2
-          }, {
-            label: "3",
-            value: 3
-          }, {
-            label: "4",
-            value: 4
-          }],
-          onChange: value => setResetHeadingsLevel(parseInt(value))
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_buttons_reset_heading_levels__WEBPACK_IMPORTED_MODULE_4__["default"], {
-          level: resetHeadingsLevel
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+      description: "Change all heading blocks to the selected level.",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+        label: "Heading Level",
+        value: resetHeadingsLevel,
+        options: headingLevels,
+        onChange: value => setResetHeadingsLevel(parseInt(value))
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_buttons_reset_heading_levels__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        level: resetHeadingsLevel
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
       name: "mrw-promote-headings",
       title: "Promote Heading Levels",
-      className: "mrw-promote-headings",
       icon: "arrow-up-alt",
-      initialOpen: false,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
-        style: {
-          display: "flex",
-          gap: "12px",
-          flexDirection: "column"
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("p", {
-          children: "\"Raise\" all headings in the hierarchy by one level (decrease numeric level by one). Change in levels is capped at 2, so this tool may result in flattening heading structure."
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_buttons_promote_heading_levels__WEBPACK_IMPORTED_MODULE_5__["default"], {})]
-      })
+      description: "\"Raise\" all headings in the hierarchy by one level (decrease numeric level by one). Change in levels is capped at 2, so this tool may result in flattening heading structure.",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_buttons_promote_heading_levels__WEBPACK_IMPORTED_MODULE_6__["default"], {})
     })]
   });
 };

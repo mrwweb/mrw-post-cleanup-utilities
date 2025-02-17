@@ -1,10 +1,7 @@
-/*
- * Dependencies.
- */
-import { BlockTransformButton } from "../compontents/block-transform-button";
 import { createBlock, getBlockContent } from "@wordpress/blocks";
+import BlockTransformButton from "../compontents/block-transform-button";
 
-function PromoteHeadingLevels(attributes) {
+export default function PromoteHeadingLevels(attributes) {
 
 	function isHeadingButNot2(block) {
 		return block?.name === "core/heading" && block.attributes.level > 2;
@@ -33,5 +30,3 @@ function PromoteHeadingLevels(attributes) {
 		/>
 	);
 }
-
-export default PromoteHeadingLevels;

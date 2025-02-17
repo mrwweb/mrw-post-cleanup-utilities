@@ -1,10 +1,7 @@
-/*
- * Dependencies.
- */
-import { BlockTransformButton } from "../compontents/block-transform-button";
 import { createBlock, getBlockContent } from "@wordpress/blocks";
+import BlockTransformButton from "../compontents/block-transform-button";
 
-function ResetHeadingLevelsButton(attributes) {
+export default function ResetHeadingLevelsButton(attributes) {
 	const { level } = attributes;
 
 	function isHeadingButNotSelectedLevel(block, level) {
@@ -34,5 +31,3 @@ function ResetHeadingLevelsButton(attributes) {
 		/>
 	);
 }
-
-export default ResetHeadingLevelsButton;
