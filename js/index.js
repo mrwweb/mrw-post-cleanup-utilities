@@ -12,21 +12,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../compontents/block-transform-button */ "./src/js/compontents/block-transform-button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
 /*
- * WordPress dependencies.
+ * Dependencies.
  */
-
-
 
 
 
@@ -36,25 +29,6 @@ function FixFakeHeadingsButton(attributes) {
   } = attributes;
   if (level === 2) {
     level = undefined;
-  }
-
-  /* Lesson learned: React hooks must be called in the root of the functional compontent! */
-  /* See: https://react.dev/warnings/invalid-hook-call-warning#breaking-rules-of-hooks
-  and See: https://developer.wordpress.org/news/2024/03/28/how-to-work-effectively-with-the-useselect-hook/#but-call-them-outside-when-you-re-in-an-event-handler */
-  /* select all blocks in the body of the wordpress block editor with useSelect */
-  const blocks = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.useSelect)(select => select(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.store).getBlocks(), []);
-  const {
-    replaceBlock
-  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.useDispatch)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.store);
-  function makeRealHeadings() {
-    blocks.forEach(block => analyzeBlocks(block));
-  }
-  function analyzeBlocks(block) {
-    if (isFakeHeading(block)) {
-      convertParagraphToHeading(block);
-    } else if (block?.innerBlocks?.length) {
-      block.innerBlocks.forEach(block => analyzeBlocks(block));
-    }
   }
 
   /**
@@ -67,7 +41,7 @@ function FixFakeHeadingsButton(attributes) {
     if (block?.name !== "core/paragraph") {
       return false;
     }
-    const blockContent = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.getBlockContent)(block).trim();
+    const blockContent = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.getBlockContent)(block).trim();
     if (blockContent === undefined) {
       return false;
     }
@@ -80,20 +54,18 @@ function FixFakeHeadingsButton(attributes) {
     return onlyOneBold;
   }
   function convertParagraphToHeading(block) {
-    const blockContent = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.getBlockContent)(block);
-    const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.createBlock)("core/heading", {
+    const blockContent = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.getBlockContent)(block);
+    const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)("core/heading", {
       content: blockContent.replace("<p><strong>", "").replace("</strong></p>", "").replace("<u>", "").replace("</u>", "").trim(),
       level
     });
-    replaceBlock(block.clientId, newBlock);
+    return newBlock;
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
-    variant: "secondary",
-    text: "Fix Fake Headings",
-    icon: "heading",
-    __nextHasNoMarginBottom: true,
-    isDestructive: true,
-    onClick: makeRealHeadings
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_1__.BlockTransformButton, {
+    blockTest: isFakeHeading,
+    blockTransform: convertParagraphToHeading,
+    buttonText: "Fix Fake Headings",
+    buttonIcon: "heading"
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FixFakeHeadingsButton);
@@ -110,57 +82,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../compontents/block-transform-button */ "./src/js/compontents/block-transform-button.js");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
 /*
- * WordPress dependencies.
+ * Dependencies.
  */
 
 
 
-
-
 function PromoteHeadingLevels(attributes) {
-  const blocks = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.useSelect)(select => select(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.store).getBlocks(), []);
-  const {
-    replaceBlock
-  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.useDispatch)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.store);
-  function PromoteHeadingLevels() {
-    blocks.forEach(block => recurseBlocks(block));
-  }
-  function recurseBlocks(block) {
-    if (block?.name === "core/heading" && block.attributes.level > 2) {
-      PromoteHeadingLevel(block);
-    } else if (block?.innerBlocks?.length) {
-      block.innerBlocks.forEach(block => recurseBlocks(block));
-    }
+  function isHeadingButNot2(block) {
+    return block?.name === "core/heading" && block.attributes.level > 2;
   }
   function PromoteHeadingLevel(block) {
-    const blockContent = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.getBlockContent)(block);
-    const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.createBlock)("core/heading", {
+    const blockContent = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.getBlockContent)(block);
+    const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)("core/heading", {
       ...block.attributes,
       content: blockContent
       // regex for any number
       .replace(/<h[2-6][^>]*>/i, '').replace(/<\/h[2-6]>/i, '').trim(),
       level: Math.max(2, block.attributes.level - 1)
     });
-    replaceBlock(block.clientId, newBlock);
+    return newBlock;
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
-    variant: "secondary",
-    text: "Promote Headings",
-    icon: "arrow-up-alt",
-    __nextHasNoMarginBottom: true,
-    isDestructive: true,
-    onClick: PromoteHeadingLevels
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_0__.BlockTransformButton, {
+    blockTest: isHeadingButNot2,
+    blockTransform: PromoteHeadingLevel,
+    buttonText: "Promote Headings",
+    buttonIcon: "arrow-up-alt"
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PromoteHeadingLevels);
@@ -177,63 +129,112 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
-/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../compontents/block-transform-button */ "./src/js/compontents/block-transform-button.js");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
 /*
- * WordPress dependencies.
+ * Dependencies.
  */
 
 
 
-
-
 function ResetHeadingLevelsButton(attributes) {
-  let {
+  const {
     level
   } = attributes;
-  const blocks = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.useSelect)(select => select(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.store).getBlocks(), []);
-  const {
-    replaceBlock
-  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.useDispatch)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.store);
-  function resetHeadingLevels() {
-    blocks.forEach(block => recurseBlocks(block));
-  }
-  function recurseBlocks(block) {
-    if (block?.name === "core/heading" && block.attributes.level !== level) {
-      resetHeadingLevel(block);
-    } else if (block?.innerBlocks?.length) {
-      block.innerBlocks.forEach(block => recurseBlocks(block));
-    }
+  function isHeadingButNotSelectedLevel(block, level) {
+    return block?.name === "core/heading" && block.attributes.level !== level;
   }
   function resetHeadingLevel(block) {
-    const blockContent = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.getBlockContent)(block);
-    const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.createBlock)("core/heading", {
+    const blockContent = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.getBlockContent)(block);
+    const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.createBlock)("core/heading", {
       ...block.attributes,
       content: blockContent
       // regex for any number
       .replace(/<h[2-6][^>]*>/i, '').replace(/<\/h[2-6]>/i, '').trim(),
       level
     });
-    replaceBlock(block.clientId, newBlock);
+    return newBlock;
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
-    variant: "secondary",
-    text: "Make all headings H" + level + "s",
-    icon: "image-rotate",
-    __nextHasNoMarginBottom: true,
-    isDestructive: true,
-    onClick: resetHeadingLevels
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_compontents_block_transform_button__WEBPACK_IMPORTED_MODULE_0__.BlockTransformButton, {
+    blockTest: isHeadingButNotSelectedLevel,
+    blockTransform: resetHeadingLevel,
+    buttonText: "Make all headings H" + level + "s",
+    buttonIcon: "image-rotate"
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ResetHeadingLevelsButton);
+
+/***/ }),
+
+/***/ "./src/js/compontents/block-transform-button.js":
+/*!******************************************************!*\
+  !*** ./src/js/compontents/block-transform-button.js ***!
+  \******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   BlockTransformButton: () => (/* binding */ BlockTransformButton)
+/* harmony export */ });
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+function BlockTransformButton(props) {
+  const {
+    blockTest,
+    blockTransform,
+    buttonText,
+    buttonIcon
+  } = props;
+
+  /*
+  Lesson learned: React hooks must be called in the root of the functional compontent!
+  See: https://react.dev/warnings/invalid-hook-call-warning#breaking-rules-of-hooks
+  and See: https://developer.wordpress.org/news/2024/03/28/how-to-work-effectively-with-the-useselect-hook/#but-call-them-outside-when-you-re-in-an-event-handler
+  */
+  const {
+    replaceBlock
+  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useDispatch)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.store);
+  const blocks = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(select => select(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.store).getBlocks(), []);
+
+  /**
+   * Function that 1) tests a block to see if it meets a specific criteria, and 2) if it does, transforms it via the second function. It is recursive and will go through nested blocks utnil all blocks have been tested and possibly transformed.
+   *
+   * @param {object} block a WordPress block editor block object
+   * @param {function} criteriaFunction a function that tests the block to see if it meets a specific criteria
+   * @param {function} transformFunction a function that transforms the block if it meets the criteria
+   */
+  function recurseAndTransform(block, criteriaFunction, transformFunction) {
+    if (criteriaFunction(block)) {
+      const newBlock = transformFunction(block);
+      replaceBlock(block.clientId, newBlock);
+    } else if (block?.innerBlocks?.length) {
+      block.innerBlocks.forEach(block => recurseAndTransform(block));
+    }
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Button, {
+    text: buttonText,
+    icon: buttonIcon,
+    isDestructive: true,
+    onClick: () => {
+      blocks.forEach(block => recurseAndTransform(block, blockTest, blockTransform));
+    },
+    __nextHasNoMarginBottom: true,
+    variant: "secondary"
+  });
+}
 
 /***/ }),
 
