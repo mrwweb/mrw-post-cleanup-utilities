@@ -1,3 +1,7 @@
+/* WordPress Dependencies */
+import { __ } from "@wordpress/i18n";
+
+/* Internal Dependencies */
 import EditorFindReplaceButton from "../compontents/editor-find-replace-button";
 
 export default function RemoveLinebreaksButton() {
@@ -9,9 +13,9 @@ export default function RemoveLinebreaksButton() {
 
     return (
         <EditorFindReplaceButton
-            buttonText={'Remove Linebreaks'}
+            buttonText={__('Remove Linebreaks', 'mrw-post-cleanup-utilities')}
             buttonIcon={'editor-break'}
-            transformFunction={removeLinebreaks}
-            />
+            contentTransform={removeLinebreaks}
+        />
     );
 }

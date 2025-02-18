@@ -1,4 +1,8 @@
+/* WordPress Dependencies */
+import { __ } from "@wordpress/i18n";
 import { createBlock, getBlockContent } from "@wordpress/blocks";
+
+/* Internal Dependencies */
 import BlockTransformButton from "../compontents/block-transform-button";
 
 export default function FixFakeHeadingsButton(attributes) {
@@ -47,10 +51,10 @@ export default function FixFakeHeadingsButton(attributes) {
 
 	return (
 		<BlockTransformButton
+			label={__("Fix Fake Headings", 'mrw-post-cleanup-utilities')}
+			icon="heading"
 			blockTest={isFakeHeading}
 			blockTransform={convertParagraphToHeading}
-			buttonText="Fix Fake Headings"
-			buttonIcon="heading"
 		/>
 	);
 }

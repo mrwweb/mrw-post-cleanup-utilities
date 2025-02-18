@@ -1,4 +1,8 @@
+/* WordPress Dependencies */
 import { createBlock, getBlockContent } from "@wordpress/blocks";
+import { __, sprintf } from "@wordpress/i18n";
+
+/* Internal Dependencies */
 import BlockTransformButton from "../compontents/block-transform-button";
 
 export default function ResetHeadingLevelsButton(attributes) {
@@ -24,10 +28,10 @@ export default function ResetHeadingLevelsButton(attributes) {
 
 	return (
 		<BlockTransformButton
+			label={sprintf(__("Make all headings H%1$ds", 'mrw-post-cleanup-utilities'), level)}
+			icon="image-rotate"
 			blockTest={isHeadingButNotSelectedLevel}
 			blockTransform={resetHeadingLevel}
-			buttonText={"Make all headings H" + level + "s"}
-			buttonIcon="image-rotate"
 		/>
 	);
 }

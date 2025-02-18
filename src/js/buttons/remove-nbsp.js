@@ -1,3 +1,7 @@
+/* WordPress Dependencies */
+import { __ } from "@wordpress/i18n";
+
+/* Internal Dependencies */
 import EditorFindReplaceButton from "../compontents/editor-find-replace-button";
 
 export default function RemoveNBSPsButton() {
@@ -8,9 +12,9 @@ export default function RemoveNBSPsButton() {
 
     return (
         <EditorFindReplaceButton
-            buttonText={'Remove Non-breaking Spaces'}
+            buttonText={__('Remove Non-breaking Spaces', 'mrw-post-cleanup-utilities')}
             buttonIcon={'button'}
-            transformFunction={removeNBSPs}
-            />
+            contentTransform={removeNBSPs}
+        />
     );
 }

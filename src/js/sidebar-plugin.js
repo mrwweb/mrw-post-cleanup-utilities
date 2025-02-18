@@ -1,4 +1,11 @@
+/**
+ * The custom sidebar containing all utilities. Each utility is put into its own SidebarPanelSection component.
+ * 
+ * Some sections may require custom, non-persistent settings (e.g. what heading level to change all headings to), which are also declared here
+ */
+
 /* WordPress dependencies */
+import { __ } from "@wordpress/i18n";
 import { PluginSidebar } from "@wordpress/editor";
 import { useState } from "@wordpress/element";
 import { SelectControl } from "@wordpress/components";
@@ -24,21 +31,17 @@ const CleanupUtilitiesSidebar = () => {
 	return (
 		<PluginSidebar
 			name="mrw-post-cleanup-utilities"
-			title="Post Cleanup Utilities"
+			title={__("Post Cleanup Utilities", 'mrw-post-cleanup-utilities')}
 			icon="admin-tools"
 		>
 			<SidebarPanelSection
 				name="mrw-fix-headings"
-				title="Fix Fake Headings"
+				title={__("Fix Fake Headings", 'mrw-post-cleanup-utilities')}
 				icon="heading"
-				description="This button will find any paragraphs that are completely
-						bolded and turn them into headings. By default, headings are
-						level 2 (main subsections), but many pages (especially
-						Guides) may benefit from conversion to Heading 3 or Heading
-						4 and then updating just a few Headings to level 2/3."
+				description={__("Turns Paragraphs blocks containing only bold text into Heading blocks of the selected level.", 'mrw-post-cleanup-utilities')}
 			>
 				<SelectControl
-					label="Heading Level"
+					label={__("Heading Level", 'mrw-post-cleanup-utilities')}
 					value={fakeHeadingsLevel}
 					options={headingLevels}
 					onChange={(value) => setFakeHeadingsLevel(parseInt(value))}
@@ -48,12 +51,12 @@ const CleanupUtilitiesSidebar = () => {
 
 			<SidebarPanelSection
 				name="mrw-reset-headings"
-				title="Reset Heading Levels"
+				title={__("Reset Heading Levels", 'mrw-post-cleanup-utilities')}
 				icon="image-rotate"
-				description="Change all heading blocks to the selected level."
+				description={__("Change all heading blocks to the selected level.", 'mrw-post-cleanup-utilities')}
 			>
 				<SelectControl
-					label="Heading Level"
+					label={__("Heading Level", 'mrw-post-cleanup-utilities')}
 					value={resetHeadingsLevel}
 					options={headingLevels}
 					onChange={(value) => setResetHeadingsLevel(parseInt(value))}
@@ -63,36 +66,36 @@ const CleanupUtilitiesSidebar = () => {
 
 			<SidebarPanelSection
 				name="mrw-promote-headings"
-				title="Promote Heading Levels"
+				title={__("Promote Heading Levels", 'mrw-post-cleanup-utilities')}
 				icon="arrow-up-alt"
-				description={"\"Raise\" all headings in the hierarchy by one level (decrease numeric level by one). Change in levels is capped at 2, so this tool may result in flattening heading structure."}
+				description={__("Move every heading up the hierarchy by one level (e.g. H3 becomes H2). Change is capped at H2.", 'mrw-post-cleanup-utilities')}
 				>
 				<PromoteHeadingLevelsButton />
 			</SidebarPanelSection>
 
 			<SidebarPanelSection
 				name="mrw-strip-underlines"
-				title="Strip Underlines"
+				title={__("Strip Underlines", 'mrw-post-cleanup-utilities')}
 				icon="editor-underline"
-				description={"Remove all underlines from either the <u> element or inline styles."}
+				description={__("Remove all underlines created by either the <u> element or inline styles.", 'mrw-post-cleanup-utilities')}
 				>
 				<StripUnderlinesButton />
 			</SidebarPanelSection>
 
 			<SidebarPanelSection
 				name="mrw-remove-linebreaks"
-				title="Remove Linebreaks"
+				title={__("Remove Linebreaks", 'mrw-post-cleanup-utilities')}
 				icon="editor-break"
-				description={"Remove all \"hard\" linebreaks within paragraphs, headings, etc."}
+				description={__("Remove all linebreaks within paragraphs, headings, etc.", 'mrw-post-cleanup-utilities')}
 				>
 				<RemoveLinebreaksButton />
 			</SidebarPanelSection>
 
 			<SidebarPanelSection
 				name="mrw-remove-nbsps"
-				title="Remove Non-breaking Spaces"
+				title={__("Remove Non-breaking Spaces", 'mrw-post-cleanup-utilities')}
 				icon="button"
-				description={"Remove the &nbsp; character that can result in double-spaces or undesired text wrapping."}
+				description={__("Remove the &nbsp; character that can result in double-spaces or undesired text wrapping.", 'mrw-post-cleanup-utilities')}
 				>
 				<RemoveNBSPsButton />
 			</SidebarPanelSection>
