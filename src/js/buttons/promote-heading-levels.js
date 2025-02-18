@@ -1,30 +1,14 @@
-/*
- * WordPress dependencies.
- */
-import { Button } from "@wordpress/components";
-import { useSelect, useDispatch } from "@wordpress/data";
-import { store as blockEditorStore } from "@wordpress/block-editor";
+/* WordPress Dependencies */
+import { __ } from "@wordpress/i18n";
 import { createBlock, getBlockContent } from "@wordpress/blocks";
 
-function PromoteHeadingLevels(attributes) {
+/* Internal Dependencies */
+import BlockTransformButton from "../components/block-transform-button";
 
-	const blocks = useSelect(
-		(select) => select(blockEditorStore).getBlocks(),
-		[],
-	);
-	
-	const { replaceBlock } = useDispatch(blockEditorStore);
+export default function PromoteHeadingLevels(attributes) {
 
-	function PromoteHeadingLevels() {
-		blocks.forEach((block) => recurseBlocks(block));
-	}
-
-	function recurseBlocks(block) {
-		if (block?.name === "core/heading" && block.attributes.level > 2) {
-			PromoteHeadingLevel(block);
-		} else if (block?.innerBlocks?.length) {
-			block.innerBlocks.forEach((block) => recurseBlocks(block));
-		}
+	function isHeadingButNot2(block) {
+		return block?.name === "core/heading" && block.attributes.level > 2;
 	}
 
 	function PromoteHeadingLevel(block) {
@@ -38,19 +22,15 @@ function PromoteHeadingLevels(attributes) {
                 .trim(),
 			level: Math.max(2,block.attributes.level - 1),
 		});
-		replaceBlock(block.clientId, newBlock);
+		return newBlock;
 	}
 
 	return (
-		<Button
-			variant="secondary"
-			text="Promote Headings"
+		<BlockTransformButton
+			label={__("Promote Headings", 'mrw-post-cleanup-utilities')}
 			icon="arrow-up-alt"
-			__nextHasNoMarginBottom={true}
-			isDestructive={true}
-			onClick={PromoteHeadingLevels}
+			blockTest={isHeadingButNot2}
+			blockTransform={PromoteHeadingLevel}
 		/>
 	);
 }
-
-export default PromoteHeadingLevels;

@@ -1,45 +1,16 @@
-/*
- * WordPress dependencies.
- */
-import { Button } from "@wordpress/components";
-import { useSelect, useDispatch } from "@wordpress/data";
-import { store as blockEditorStore } from "@wordpress/block-editor";
+/* WordPress Dependencies */
+import { __ } from "@wordpress/i18n";
 import { createBlock, getBlockContent } from "@wordpress/blocks";
 
-function FixFakeHeadingsButton(attributes) {
+/* Internal Dependencies */
+import BlockTransformButton from "../components/block-transform-button";
+
+export default function FixFakeHeadingsButton(attributes) {
 	let { level } = attributes;
 	if (level === 2) {
 		level = undefined;
 	}
 
-	/* Lesson learned: React hooks must be called in the root of the functional compontent! */
-	/* See: https://react.dev/warnings/invalid-hook-call-warning#breaking-rules-of-hooks
-	and See: https://developer.wordpress.org/news/2024/03/28/how-to-work-effectively-with-the-useselect-hook/#but-call-them-outside-when-you-re-in-an-event-handler */
-	/* select all blocks in the body of the wordpress block editor with useSelect */
-	const blocks = useSelect(
-		(select) => select(blockEditorStore).getBlocks(),
-		[],
-	);
-	const { replaceBlock } = useDispatch(blockEditorStore);
-
-	function makeRealHeadings() {
-		blocks.forEach((block) => analyzeBlocks(block));
-	}
-
-	function analyzeBlocks(block) {
-		if (isFakeHeading(block)) {
-			convertParagraphToHeading(block);
-		} else if (block?.innerBlocks?.length) {
-			block.innerBlocks.forEach((block) => analyzeBlocks(block));
-		}
-	}
-
-	/**
-	 * Determine if block is a faux heading that is bolded
-	 *
-	 * @param {*} block given a WordPress block object, this determines if it's a paragraph that is completely bolded
-	 * @returns bool
-	 */
 	function isFakeHeading(block) {
 		if (block?.name !== "core/paragraph") {
 			return false;
@@ -68,27 +39,22 @@ function FixFakeHeadingsButton(attributes) {
 	function convertParagraphToHeading(block) {
 		const blockContent = getBlockContent(block);
 		const newBlock = createBlock("core/heading", {
+			/* Reminder that this simple .replace() only works because there is one instance of each element we're searching for */
 			content: blockContent
 				.replace("<p><strong>", "")
 				.replace("</strong></p>", "")
-				.replace("<u>", "")
-				.replace("</u>", "")
                 .trim(),
 			level,
 		});
-		replaceBlock(block.clientId, newBlock);
+		return newBlock;
 	}
 
 	return (
-		<Button
-			variant="secondary"
-			text="Fix Fake Headings"
+		<BlockTransformButton
+			label={__("Fix Fake Headings", 'mrw-post-cleanup-utilities')}
 			icon="heading"
-			__nextHasNoMarginBottom={true}
-			isDestructive={true}
-			onClick={makeRealHeadings}
+			blockTest={isFakeHeading}
+			blockTransform={convertParagraphToHeading}
 		/>
 	);
 }
-
-export default FixFakeHeadingsButton;

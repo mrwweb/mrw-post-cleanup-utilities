@@ -1,31 +1,15 @@
-/*
- * WordPress dependencies.
- */
-import { Button } from "@wordpress/components";
-import { useSelect, useDispatch } from "@wordpress/data";
-import { store as blockEditorStore } from "@wordpress/block-editor";
+/* WordPress Dependencies */
 import { createBlock, getBlockContent } from "@wordpress/blocks";
+import { __, sprintf } from "@wordpress/i18n";
 
-function ResetHeadingLevelsButton(attributes) {
-	let { level } = attributes;
-	
-	const blocks = useSelect(
-		(select) => select(blockEditorStore).getBlocks(),
-		[],
-	);
-	
-	const { replaceBlock } = useDispatch(blockEditorStore);
+/* Internal Dependencies */
+import BlockTransformButton from "../components/block-transform-button";
 
-	function resetHeadingLevels() {
-		blocks.forEach((block) => recurseBlocks(block));
-	}
+export default function ResetHeadingLevelsButton(attributes) {
+	const { level } = attributes;
 
-	function recurseBlocks(block) {
-		if (block?.name === "core/heading" && block.attributes.level !== level) {
-			resetHeadingLevel(block);
-		} else if (block?.innerBlocks?.length) {
-			block.innerBlocks.forEach((block) => recurseBlocks(block));
-		}
+	function isHeadingButNotSelectedLevel(block, level) {
+		return block?.name === "core/heading" && block.attributes.level !== level;
 	}
 
 	function resetHeadingLevel(block) {
@@ -39,19 +23,15 @@ function ResetHeadingLevelsButton(attributes) {
                 .trim(),
 			level,
 		});
-		replaceBlock(block.clientId, newBlock);
+		return newBlock;
 	}
 
 	return (
-		<Button
-			variant="secondary"
-			text={"Make all headings H" + level + "s"}
+		<BlockTransformButton
+			label={sprintf(__("Make all headings H%1$ds", 'mrw-post-cleanup-utilities'), level)}
 			icon="image-rotate"
-			__nextHasNoMarginBottom={true}
-			isDestructive={true}
-			onClick={resetHeadingLevels}
+			blockTest={isHeadingButNotSelectedLevel}
+			blockTransform={resetHeadingLevel}
 		/>
 	);
 }
-
-export default ResetHeadingLevelsButton;
