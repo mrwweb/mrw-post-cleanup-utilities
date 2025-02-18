@@ -133,6 +133,34 @@ function RemoveLinebreaksButton() {
 
 /***/ }),
 
+/***/ "./src/js/buttons/remove-nbsp.js":
+/*!***************************************!*\
+  !*** ./src/js/buttons/remove-nbsp.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RemoveNBSPsButton)
+/* harmony export */ });
+/* harmony import */ var _compontents_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../compontents/editor-find-replace-button */ "./src/js/compontents/editor-find-replace-button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function RemoveNBSPsButton() {
+  function removeNBSPs(postContent) {
+    return postContent.replace(/&nbsp;/gi, ' ');
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_compontents_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    buttonText: 'Remove Non-breaking Spaces',
+    buttonIcon: 'button',
+    transformFunction: removeNBSPs
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/buttons/reset-heading-levels.js":
 /*!************************************************!*\
   !*** ./src/js/buttons/reset-heading-levels.js ***!
@@ -402,14 +430,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _buttons_promote_heading_levels__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./buttons/promote-heading-levels */ "./src/js/buttons/promote-heading-levels.js");
 /* harmony import */ var _buttons_strip_underlines__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./buttons/strip-underlines */ "./src/js/buttons/strip-underlines.js");
 /* harmony import */ var _buttons_remove_linebreaks__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./buttons/remove-linebreaks */ "./src/js/buttons/remove-linebreaks.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _buttons_remove_nbsp__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./buttons/remove-nbsp */ "./src/js/buttons/remove-nbsp.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__);
 /* WordPress dependencies */
 
 
 
 
 /* Internal dependencies */
+
 
 
 
@@ -430,54 +460,60 @@ const CleanupUtilitiesSidebar = () => {
     label: "4",
     value: 4
   }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_wordpress_editor__WEBPACK_IMPORTED_MODULE_0__.PluginSidebar, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_wordpress_editor__WEBPACK_IMPORTED_MODULE_0__.PluginSidebar, {
     name: "mrw-post-cleanup-utilities",
     title: "Post Cleanup Utilities",
     icon: "admin-tools",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
       name: "mrw-fix-headings",
       title: "Fix Fake Headings",
       icon: "heading",
       description: "This button will find any paragraphs that are completely\r bolded and turn them into headings. By default, headings are\r level 2 (main subsections), but many pages (especially\r Guides) may benefit from conversion to Heading 3 or Heading\r 4 and then updating just a few Headings to level 2/3.",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
         label: "Heading Level",
         value: fakeHeadingsLevel,
         options: headingLevels,
         onChange: value => setFakeHeadingsLevel(parseInt(value))
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_buttons_fix_fake_headings__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_buttons_fix_fake_headings__WEBPACK_IMPORTED_MODULE_4__["default"], {
         level: fakeHeadingsLevel
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
       name: "mrw-reset-headings",
       title: "Reset Heading Levels",
       icon: "image-rotate",
       description: "Change all heading blocks to the selected level.",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
         label: "Heading Level",
         value: resetHeadingsLevel,
         options: headingLevels,
         onChange: value => setResetHeadingsLevel(parseInt(value))
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_buttons_reset_heading_levels__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_buttons_reset_heading_levels__WEBPACK_IMPORTED_MODULE_5__["default"], {
         level: resetHeadingsLevel
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
       name: "mrw-promote-headings",
       title: "Promote Heading Levels",
       icon: "arrow-up-alt",
       description: "\"Raise\" all headings in the hierarchy by one level (decrease numeric level by one). Change in levels is capped at 2, so this tool may result in flattening heading structure.",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_buttons_promote_heading_levels__WEBPACK_IMPORTED_MODULE_6__["default"], {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_buttons_promote_heading_levels__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
       name: "mrw-strip-underlines",
       title: "Strip Underlines",
       icon: "editor-underline",
       description: "Remove all underlines from either the <u> element or inline styles.",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_buttons_strip_underlines__WEBPACK_IMPORTED_MODULE_7__["default"], {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      name: "mrw-removelinebreaks",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_buttons_strip_underlines__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      name: "mrw-remove-linebreaks",
       title: "Remove Linebreaks",
       icon: "editor-break",
       description: "Remove all \"hard\" linebreaks within paragraphs, headings, etc.",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_buttons_remove_linebreaks__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_buttons_remove_linebreaks__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      name: "mrw-remove-nbsps",
+      title: "Remove Non-breaking Spaces",
+      icon: "button",
+      description: "Remove the &nbsp; character that can result in double-spaces or undesired text wrapping.",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_buttons_remove_nbsp__WEBPACK_IMPORTED_MODULE_9__["default"], {})
     })]
   });
 };

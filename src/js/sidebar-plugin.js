@@ -10,6 +10,7 @@ import ResetHeadingLevelsButton from "./buttons/reset-heading-levels";
 import PromoteHeadingLevelsButton from "./buttons/promote-heading-levels";
 import StripUnderlinesButton from "./buttons/strip-underlines";
 import RemoveLinebreaksButton from "./buttons/remove-linebreaks";
+import RemoveNBSPsButton from "./buttons/remove-nbsp";
 
 const CleanupUtilitiesSidebar = () => {
 	const [fakeHeadingsLevel, setFakeHeadingsLevel] = useState(2);
@@ -79,12 +80,21 @@ const CleanupUtilitiesSidebar = () => {
 			</SidebarPanelSection>
 
 			<SidebarPanelSection
-				name="mrw-removelinebreaks"
+				name="mrw-remove-linebreaks"
 				title="Remove Linebreaks"
 				icon="editor-break"
 				description={"Remove all \"hard\" linebreaks within paragraphs, headings, etc."}
 				>
 				<RemoveLinebreaksButton />
+			</SidebarPanelSection>
+
+			<SidebarPanelSection
+				name="mrw-remove-nbsps"
+				title="Remove Non-breaking Spaces"
+				icon="button"
+				description={"Remove the &nbsp; character that can result in double-spaces or undesired text wrapping."}
+				>
+				<RemoveNBSPsButton />
 			</SidebarPanelSection>
 
 		</PluginSidebar>
