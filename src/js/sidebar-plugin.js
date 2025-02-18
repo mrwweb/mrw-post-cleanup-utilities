@@ -9,6 +9,7 @@ import FixFakeHeadingsButton from "./buttons/fix-fake-headings";
 import ResetHeadingLevelsButton from "./buttons/reset-heading-levels";
 import PromoteHeadingLevelsButton from "./buttons/promote-heading-levels";
 import StripUnderlinesButton from "./buttons/strip-underlines";
+import RemoveLinebreaksButton from "./buttons/remove-linebreaks";
 
 const CleanupUtilitiesSidebar = () => {
 	const [fakeHeadingsLevel, setFakeHeadingsLevel] = useState(2);
@@ -43,6 +44,7 @@ const CleanupUtilitiesSidebar = () => {
 				/>
 				<FixFakeHeadingsButton level={fakeHeadingsLevel} />
 			</SidebarPanelSection>
+
 			<SidebarPanelSection
 				name="mrw-reset-headings"
 				title="Reset Heading Levels"
@@ -57,6 +59,7 @@ const CleanupUtilitiesSidebar = () => {
 				/>
 				<ResetHeadingLevelsButton level={resetHeadingsLevel} />
 			</SidebarPanelSection>
+
 			<SidebarPanelSection
 				name="mrw-promote-headings"
 				title="Promote Heading Levels"
@@ -65,13 +68,23 @@ const CleanupUtilitiesSidebar = () => {
 				>
 				<PromoteHeadingLevelsButton />
 			</SidebarPanelSection>
+
 			<SidebarPanelSection
 				name="mrw-strip-underlines"
-				title="Remove Underlines"
+				title="Strip Underlines"
 				icon="editor-underline"
 				description={"Remove all underlines from either the <u> element or inline styles."}
 				>
 				<StripUnderlinesButton />
+			</SidebarPanelSection>
+
+			<SidebarPanelSection
+				name="mrw-removelinebreaks"
+				title="Remove Linebreaks"
+				icon="editor-break"
+				description={"Remove all \"hard\" linebreaks within paragraphs, headings, etc."}
+				>
+				<RemoveLinebreaksButton />
 			</SidebarPanelSection>
 
 		</PluginSidebar>
