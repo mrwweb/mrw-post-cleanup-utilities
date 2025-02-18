@@ -46,7 +46,8 @@ function FixFakeHeadingsButton(attributes) {
   function convertParagraphToHeading(block) {
     const blockContent = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.getBlockContent)(block);
     const newBlock = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.createBlock)("core/heading", {
-      content: blockContent.replace("<p><strong>", "").replace("</strong></p>", "").replace("<u>", "").replace("</u>", "").trim(),
+      /* Reminder that this simple .replace() only works because there is one instance of each element we're searching for */
+      content: blockContent.replace("<p><strong>", "").replace("</strong></p>", "").trim(),
       level
     });
     return newBlock;
@@ -150,6 +151,35 @@ function ResetHeadingLevelsButton(attributes) {
 
 /***/ }),
 
+/***/ "./src/js/buttons/strip-underlines.js":
+/*!********************************************!*\
+  !*** ./src/js/buttons/strip-underlines.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ StripUnderlinesButton)
+/* harmony export */ });
+/* harmony import */ var _compontents_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../compontents/editor-find-replace-button */ "./src/js/compontents/editor-find-replace-button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function StripUnderlinesButton() {
+  // This will remove all instances of underlines using either the <u> tag or inline styles. If a span is only used to apply this one inline style, then we can and should safely remove the span as well
+  function stripUnderlines(postContent) {
+    return postContent.replace(/<u>/gi, '').replace(/<\\u>/gi, '').replace(/<span style="text-decoration: underline;">(.*)<\/span>/gi, '$1').replace(/text-decoration: underline;/gi, '');
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_compontents_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_0__["default"], {
+    buttonText: 'Strip Underlines',
+    buttonIcon: 'editor-underline',
+    transformFunction: stripUnderlines
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/compontents/block-transform-button.js":
 /*!******************************************************!*\
   !*** ./src/js/compontents/block-transform-button.js ***!
@@ -220,6 +250,63 @@ function BlockTransformButton(props) {
 
 /***/ }),
 
+/***/ "./src/js/compontents/editor-find-replace-button.js":
+/*!**********************************************************!*\
+  !*** ./src/js/compontents/editor-find-replace-button.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ EditorFindReplaceButton)
+/* harmony export */ });
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/editor */ "@wordpress/editor");
+/* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+function EditorFindReplaceButton(props) {
+  const {
+    transformFunction,
+    buttonText,
+    buttonIcon
+  } = props;
+  const {
+    resetBlocks
+  } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useDispatch)(_wordpress_editor__WEBPACK_IMPORTED_MODULE_2__.store);
+  const postContent = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(select => select(_wordpress_editor__WEBPACK_IMPORTED_MODULE_2__.store).getEditedPostContent(), []);
+
+  /**
+   * Apply the transform function to the post content, parse back into block objects, and reset the editor with those updated blocks
+   */
+  function updatePost() {
+    const newContent = transformFunction(postContent);
+    const updatedBlocks = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__.parse)(newContent);
+    resetBlocks(updatedBlocks);
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Button, {
+    text: buttonText,
+    icon: buttonIcon,
+    isDestructive: true,
+    __nextHasNoMarginBottom: true,
+    onClick: () => updatePost(),
+    variant: "secondary"
+  });
+}
+
+/***/ }),
+
 /***/ "./src/js/compontents/sidebar-panel-section.js":
 /*!*****************************************************!*\
   !*** ./src/js/compontents/sidebar-panel-section.js ***!
@@ -285,14 +372,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _buttons_fix_fake_headings__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./buttons/fix-fake-headings */ "./src/js/buttons/fix-fake-headings.js");
 /* harmony import */ var _buttons_reset_heading_levels__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./buttons/reset-heading-levels */ "./src/js/buttons/reset-heading-levels.js");
 /* harmony import */ var _buttons_promote_heading_levels__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./buttons/promote-heading-levels */ "./src/js/buttons/promote-heading-levels.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _buttons_strip_underlines__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./buttons/strip-underlines */ "./src/js/buttons/strip-underlines.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__);
 /* WordPress dependencies */
 
 
 
 
 /* Internal dependencies */
+
 
 
 
@@ -311,42 +400,48 @@ const CleanupUtilitiesSidebar = () => {
     label: "4",
     value: 4
   }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_editor__WEBPACK_IMPORTED_MODULE_0__.PluginSidebar, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_editor__WEBPACK_IMPORTED_MODULE_0__.PluginSidebar, {
     name: "mrw-post-cleanup-utilities",
     title: "Post Cleanup Utilities",
     icon: "admin-tools",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
       name: "mrw-fix-headings",
       title: "Fix Fake Headings",
       icon: "heading",
       description: "This button will find any paragraphs that are completely\r bolded and turn them into headings. By default, headings are\r level 2 (main subsections), but many pages (especially\r Guides) may benefit from conversion to Heading 3 or Heading\r 4 and then updating just a few Headings to level 2/3.",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
         label: "Heading Level",
         value: fakeHeadingsLevel,
         options: headingLevels,
         onChange: value => setFakeHeadingsLevel(parseInt(value))
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_buttons_fix_fake_headings__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_buttons_fix_fake_headings__WEBPACK_IMPORTED_MODULE_4__["default"], {
         level: fakeHeadingsLevel
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
       name: "mrw-reset-headings",
       title: "Reset Heading Levels",
       icon: "image-rotate",
       description: "Change all heading blocks to the selected level.",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
         label: "Heading Level",
         value: resetHeadingsLevel,
         options: headingLevels,
         onChange: value => setResetHeadingsLevel(parseInt(value))
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_buttons_reset_heading_levels__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_buttons_reset_heading_levels__WEBPACK_IMPORTED_MODULE_5__["default"], {
         level: resetHeadingsLevel
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
       name: "mrw-promote-headings",
       title: "Promote Heading Levels",
       icon: "arrow-up-alt",
       description: "\"Raise\" all headings in the hierarchy by one level (decrease numeric level by one). Change in levels is capped at 2, so this tool may result in flattening heading structure.",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_buttons_promote_heading_levels__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_buttons_promote_heading_levels__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_compontents_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      name: "mrw-strip-underlines",
+      title: "Remove Underlines",
+      icon: "editor-underline",
+      description: "Remove all underlines from either the <u> element or inline styles.",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_buttons_strip_underlines__WEBPACK_IMPORTED_MODULE_7__["default"], {})
     })]
   });
 };

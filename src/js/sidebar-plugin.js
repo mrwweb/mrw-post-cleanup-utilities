@@ -8,6 +8,7 @@ import SidebarPanelSection from "./compontents/sidebar-panel-section";
 import FixFakeHeadingsButton from "./buttons/fix-fake-headings";
 import ResetHeadingLevelsButton from "./buttons/reset-heading-levels";
 import PromoteHeadingLevelsButton from "./buttons/promote-heading-levels";
+import StripUnderlinesButton from "./buttons/strip-underlines";
 
 const CleanupUtilitiesSidebar = () => {
 	const [fakeHeadingsLevel, setFakeHeadingsLevel] = useState(2);
@@ -63,6 +64,14 @@ const CleanupUtilitiesSidebar = () => {
 				description={"\"Raise\" all headings in the hierarchy by one level (decrease numeric level by one). Change in levels is capped at 2, so this tool may result in flattening heading structure."}
 				>
 				<PromoteHeadingLevelsButton />
+			</SidebarPanelSection>
+			<SidebarPanelSection
+				name="mrw-strip-underlines"
+				title="Remove Underlines"
+				icon="editor-underline"
+				description={"Remove all underlines from either the <u> element or inline styles."}
+				>
+				<StripUnderlinesButton />
 			</SidebarPanelSection>
 
 		</PluginSidebar>

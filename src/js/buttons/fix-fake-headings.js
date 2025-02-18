@@ -35,11 +35,10 @@ export default function FixFakeHeadingsButton(attributes) {
 	function convertParagraphToHeading(block) {
 		const blockContent = getBlockContent(block);
 		const newBlock = createBlock("core/heading", {
+			/* Reminder that this simple .replace() only works because there is one instance of each element we're searching for */
 			content: blockContent
 				.replace("<p><strong>", "")
 				.replace("</strong></p>", "")
-				.replace("<u>", "")
-				.replace("</u>", "")
                 .trim(),
 			level,
 		});
