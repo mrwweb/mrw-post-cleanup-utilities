@@ -2,7 +2,7 @@
 import { __ } from "@wordpress/i18n";
 
 /* Internal Dependencies */
-import EditorFindReplaceButton from "../compontents/editor-find-replace-button";
+import EditorFindReplaceButton from "../components/editor-find-replace-button";
 
 export default function RemoveNBSPsButton() {
     function removeNBSPs( postContent ) {

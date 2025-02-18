@@ -11,7 +11,7 @@ import { useState } from "@wordpress/element";
 import { SelectControl } from "@wordpress/components";
 
 /* Internal dependencies */
-import SidebarPanelSection from "./compontents/sidebar-panel-section";
+import SidebarPanelSection from "./components/sidebar-panel-section";
 import FixFakeHeadingsButton from "./buttons/fix-fake-headings";
 import ResetHeadingLevelsButton from "./buttons/reset-heading-levels";
 import PromoteHeadingLevelsButton from "./buttons/promote-heading-levels";

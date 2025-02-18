@@ -3,7 +3,7 @@ import { createBlock, getBlockContent } from "@wordpress/blocks";
 import { __, sprintf } from "@wordpress/i18n";
 
 /* Internal Dependencies */
-import BlockTransformButton from "../compontents/block-transform-button";
+import BlockTransformButton from "../components/block-transform-button";
 
 export default function ResetHeadingLevelsButton(attributes) {
 	const { level } = attributes;

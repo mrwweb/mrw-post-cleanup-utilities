@@ -3,7 +3,7 @@ import { __ } from "@wordpress/i18n";
 import { createBlock, getBlockContent } from "@wordpress/blocks";
 
 /* Internal Dependencies */
-import BlockTransformButton from "../compontents/block-transform-button";
+import BlockTransformButton from "../components/block-transform-button";
 
 export default function FixFakeHeadingsButton(attributes) {
 	let { level } = attributes;

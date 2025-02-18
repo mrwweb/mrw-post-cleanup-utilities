@@ -2,7 +2,7 @@
 import { __ } from "@wordpress/i18n";
 
 /* Internal Dependencies */
-import EditorFindReplaceButton from "../compontents/editor-find-replace-button";
+import EditorFindReplaceButton from "../components/editor-find-replace-button";
 
 export default function StripUnderlinesButton() {
     // This will remove all instances of underlines using either the <u> tag or inline styles. If a span is only used to apply this one inline style, then we can and should safely remove the span as well
