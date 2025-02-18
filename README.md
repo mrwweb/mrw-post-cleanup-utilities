@@ -20,6 +20,20 @@ A WordPress plugin with useful tools to transform blocks and post content for mo
 - Remove all "hard" linebreaks (the `<br>` tag)
 - Replace all non-breaking spaces (`&nbsp;`) with regular spaces
 
+## FAQs
+
+### Where are the utilities?
+
+All utilities are in a custom block editor sidebar. To open it, click the wrench icon in the top-right corner of the block editor in the same row of buttons as the "Publish" button.
+
+### Where did the sidebar go? / I lost the sidebar
+
+It's possible to remove the wrench icon by clicking the star icon in the top-right corner of the sidebar (next to the "X" close icon). If you do this, you'll find the sidebar in the triple-dot/kebab menu (next to the "Publish" button) under "Plugins".
+
+### Can you add "X" feature?
+
+Maybe! See the existing [list of issues](https://github.com/mrwweb/mrw-post-cleanup-utilities/issues). You can help by leaving a comment or reaction on an existing issue, opening a new one, or even sponsoring work on a feature you care about.
+
 ## Changelog
 
 ### 0.3.0 (18 Feb, 2025)
