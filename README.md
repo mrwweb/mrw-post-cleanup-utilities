@@ -4,7 +4,7 @@ Mark Root-Wiley, [MRW Web Design](https://MRWweb.com)
 
 A WordPress plugin that helps clean up posts with poor formatting.
 
-![The custom sidebar with the first tool's panel expanded to show the "Fix Fake Headings" button](https://github.com/mrwweb/mrw-post-cleanup-utilities/blob/main/assets/cleanup-utilities-screenshot.png?raw=true)
+![The Post Cleanup Utilities sidebar is visible in the WordPress post editor, showing features such as Fix Fake Headings and Strip Underlines](https://github.com/mrwweb/mrw-post-cleanup-utilities/blob/main/assets/cleanup-utilities-screenshot.png?raw=true)
 
 ## Features
 
