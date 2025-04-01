@@ -20,6 +20,14 @@ A WordPress plugin with useful tools to transform blocks and post content for mo
 - Remove all "hard" linebreaks (the `<br>` tag)
 - Replace all non-breaking spaces (`&nbsp;`) with regular spaces
 
+## Installation
+
+Upload the plugin zip or use `wp-cli`:
+
+```sh
+wp plugin install https://github.com/mrwweb/mrw-post-cleanup-utilities/archive/master.zip --force --activate
+```
+
 ## FAQs
 
 ### Where are the utilities?
