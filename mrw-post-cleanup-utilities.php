@@ -6,6 +6,9 @@
  * Author URI:      https://MRWweb.com
  * Text Domain:     mrw-post-cleanup-utilities
  * Version:         0.3.0
+ * GitHub Plugin URI: mrwweb/mrw-post-cleanup-utilities
+ * Primary Branch:  main
+ * 
  *
  * @package         MRW_Post_Cleanup_Utilities
  */
