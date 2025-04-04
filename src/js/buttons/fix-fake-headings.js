@@ -22,7 +22,7 @@ export default function FixFakeHeadingsButton(attributes) {
 			return false;
 		}
 
-		const startsWithBold = blockContent.indexOf("<p><strong>") > -1;
+		const startsWithBold = (blockContent.match(/^<p(.*)>[\s]?<strong>/g) || []).length === 1;
 		const endsWithBold =
 			(blockContent.match(/<\/strong>[\s]?<\/p>$/g) || []).length === 1;
 
@@ -39,10 +39,10 @@ export default function FixFakeHeadingsButton(attributes) {
 	function convertParagraphToHeading(block) {
 		const blockContent = getBlockContent(block);
 		const newBlock = createBlock("core/heading", {
-			/* Reminder that this simple .replace() only works because there is one instance of each element we're searching for */
+			...block.attributes,
 			content: blockContent
-				.replace("<p><strong>", "")
-				.replace("</strong></p>", "")
+				.replace(/^<p(.*)>[\s]?<strong>/, "")
+				.replace(/<\/strong>[\s]?<\/p>$/, "")
                 .trim(),
 			level,
 		});
