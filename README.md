@@ -34,7 +34,7 @@ wp plugin install https://github.com/mrwweb/mrw-post-cleanup-utilities/archive/m
 
 All utilities are in a custom block editor sidebar. To open it, click the wrench icon in the top-right corner of the block editor in the same row of buttons as the "Publish" button.
 
-### Where did the sidebar go? / I lost the sidebar
+### Where did the sidebar go? / Help, I lost the sidebar!
 
 It's possible to remove the wrench icon by clicking the star icon in the top-right corner of the sidebar (next to the "X" close icon). If you do this, you'll find the sidebar in the triple-dot/kebab menu (next to the "Publish" button) under "Plugins".
 
@@ -52,7 +52,7 @@ Maybe! See the existing [list of issues](https://github.com/mrwweb/mrw-post-clea
 - Add "Remove Non-breaking Spaces" button (#2)
 - Make all strings translatable (#8)
 - Add `CONTRIBUTING.md` with contribution guidelines and documentation of plugin architecture (#10)
-- Additional code consistent and commenting to improve quality and readability
+- Additional code consistency and commenting to improve quality and readability
 
 ### 0.2.0 (10 Feb, 2025)
 
