@@ -1,6 +1,6 @@
 # MRW Post Cleanup Utilities
 
-v0.3.0
+v0.3.1
 
 Mark Root-Wiley, [MRW Web Design](https://MRWweb.com)
 
@@ -43,6 +43,11 @@ It's possible to remove the wrench icon by clicking the star icon in the top-rig
 Maybe! See the existing [list of issues](https://github.com/mrwweb/mrw-post-cleanup-utilities/issues). You can help by leaving a comment or reaction on an existing issue, opening a new one, or even sponsoring work on a feature you care about.
 
 ## Changelog
+
+### 0.3.1 (April 9, 2025)
+
+- Fix "Fake Headings" that contain styles (#17)
+- Add heading for Git Updater plugin (#14)
 
 ### 0.3.0 (18 Feb, 2025)
 

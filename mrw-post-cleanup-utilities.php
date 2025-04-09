@@ -5,7 +5,7 @@
  * Author:          Mark Root-Wiley, MRW Web Design
  * Author URI:      https://MRWweb.com
  * Text Domain:     mrw-post-cleanup-utilities
- * Version:         0.3.0
+ * Version:         0.3.1
  * GitHub Plugin URI: mrwweb/mrw-post-cleanup-utilities
  * Primary Branch:  main
  * 
