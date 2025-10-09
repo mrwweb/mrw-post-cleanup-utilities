@@ -3,7 +3,7 @@ import { __ } from "@wordpress/i18n";
 import { createBlock, getBlockContent } from "@wordpress/blocks";
 
 /* Internal Dependencies */
-import BlockTransformButton from "../components/block-transform-button";
+import MultiBlockTransformButton from "../components/multi-block-transform-button";
 
 export default function FixFakeHeadingsButton(attributes) {
 	let { level } = attributes;
@@ -16,41 +16,34 @@ export default function FixFakeHeadingsButton(attributes) {
 			return false;
 		}
 
-		const blockContent = getBlockContent(block).trim();
+		const blockContent = block.attributes.content.trim();
 
 		if (blockContent === undefined) {
 			return false;
 		}
 
-		const startsWithBold = (blockContent.match(/^<p(.*)>[\s]?<strong>/g) || []).length === 1;
+		const startsWithBold = (blockContent.match(/^<strong>/g) || []).length === 1;
 		const endsWithBold =
-			(blockContent.match(/<\/strong>[\s]?<\/p>$/g) || []).length === 1;
-
-		if (!startsWithBold || !endsWithBold) {
-			return false;
-		}
-
+			(blockContent.match(/<\/strong>$/g) || []).length === 1;
 		const onlyOneBold =
 			(blockContent.match(/<\/strong>/g) || []).length === 1;
 
-		return onlyOneBold;
+		return startsWithBold && endsWithBold && onlyOneBold;
 	}
 
 	function convertParagraphToHeading(block) {
-		const blockContent = getBlockContent(block);
 		const newBlock = createBlock("core/heading", {
 			...block.attributes,
-			content: blockContent
-				.replace(/^<p(.*)>[\s]?<strong>/, "")
-				.replace(/<\/strong>[\s]?<\/p>$/, "")
-                .trim(),
+			content: block.attributes.content
+				.replace(/^<strong>/, "")
+				.replace(/<\/strong>$/, ""),
 			level,
 		});
 		return newBlock;
 	}
 
 	return (
-		<BlockTransformButton
+		<MultiBlockTransformButton
 			label={__("Fix Fake Headings", 'mrw-post-cleanup-utilities')}
 			icon="heading"
 			blockTest={isFakeHeading}

@@ -3,7 +3,7 @@ import { createBlock, getBlockContent } from "@wordpress/blocks";
 import { __, sprintf } from "@wordpress/i18n";
 
 /* Internal Dependencies */
-import BlockTransformButton from "../components/block-transform-button";
+import MultiBlockTransformButton from "../components/multi-block-transform-button";
 
 export default function ResetHeadingLevelsButton(attributes) {
 	const { level } = attributes;
@@ -13,21 +13,16 @@ export default function ResetHeadingLevelsButton(attributes) {
 	}
 
 	function resetHeadingLevel(block) {
-		const blockContent = getBlockContent(block);
 		const newBlock = createBlock("core/heading", {
 			...block.attributes,
-			content: blockContent
-            	// regex for any number
-				.replace(/<h[2-6][^>]*>/i, '')
-				.replace(/<\/h[2-6]>/i, '')
-                .trim(),
+			content: block.attributes.content,
 			level,
 		});
 		return newBlock;
 	}
 
 	return (
-		<BlockTransformButton
+		<MultiBlockTransformButton
 			label={sprintf(__("Make all headings H%1$ds", 'mrw-post-cleanup-utilities'), level)}
 			icon="image-rotate"
 			blockTest={isHeadingButNotSelectedLevel}

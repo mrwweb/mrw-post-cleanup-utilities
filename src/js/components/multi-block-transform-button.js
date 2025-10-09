@@ -4,13 +4,13 @@ import { store as blockEditorStore } from "@wordpress/block-editor";
 import { Button } from "@wordpress/components";
 
 /**
- * The <BlockTransformButton /> component creates a button that, when clicked, will recursively test all blocks against a criteria function and transform them via a transform function if they meet the criteria.
+ * The <MultiBlockTransformButton /> component creates a button that, when clicked, will recursively test all blocks against a criteria function and transform them via a transform function if they meet the criteria.
  * 
  * Note: the current behavior means that each transformed block creates a new undo/history point for the editor
  * 
  * @param {*} props Expects four props, a blockTest function that accepts a block object and returns true or false, a blockTransform function that accepts a block object and returns a new block object, the label for the button's label, an icon (valid dashicon string)
  */
-export default function BlockTransformButton(props) {
+export default function MultiBlockTransformButton(props) {
     const { blockTest, blockTransform, label, icon } = props;
 
     /*
