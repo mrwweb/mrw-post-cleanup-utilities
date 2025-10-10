@@ -1,5 +1,6 @@
 /* WordPress Dependencies */
 import { __ } from "@wordpress/i18n";
+import { formatUnderline } from "@wordpress/icons";
 
 /* Internal Dependencies */
 import EditorFindReplaceButton from "../components/editor-find-replace-button";
@@ -17,7 +18,7 @@ export default function StripUnderlinesButton() {
 	return (
 		<EditorFindReplaceButton
             buttonText={__('Strip Underlines', 'mrw-post-cleanup-utilities')}
-            buttonIcon={'editor-underline'}
+            buttonIcon={formatUnderline}
             contentTransform={stripUnderlines}
         />
 	);

@@ -20,7 +20,7 @@ import RemoveLinebreaksButton from "./buttons/remove-linebreaks";
 import RemoveNBSPsButton from "./buttons/remove-nbsp";
 import TitleCaseButton from "./buttons/convert-title-case";
 import SentenceCaseButton from "./buttons/convert-sentence-case";
-import { formatCapitalize, keyboardReturn, levelUp } from "@wordpress/icons";
+import { formatCapitalize, formatUnderline, heading, homeButton, keyboardReturn, levelUp, reset, tool } from "@wordpress/icons";
 
 const CleanupUtilitiesSidebar = () => {
 	const [fakeHeadingsLevel, setFakeHeadingsLevel] = useState(2);
@@ -35,12 +35,12 @@ const CleanupUtilitiesSidebar = () => {
 		<PluginSidebar
 			name="mrw-post-cleanup-utilities"
 			title={__("Post Cleanup Utilities", 'mrw-post-cleanup-utilities')}
-			icon="admin-tools"
+			icon={tool}
 		>
 			<SidebarPanelSection
 				name="mrw-fix-headings"
 				title={__("Fix Fake Headings", 'mrw-post-cleanup-utilities')}
-				icon="heading"
+				icon={heading}
 				description={__("Turns Paragraphs blocks containing only bold text into Heading blocks of the selected level.", 'mrw-post-cleanup-utilities')}
 			>
 				<SelectControl
@@ -57,7 +57,7 @@ const CleanupUtilitiesSidebar = () => {
 			<SidebarPanelSection
 				name="mrw-reset-headings"
 				title={__("Reset Heading Levels", 'mrw-post-cleanup-utilities')}
-				icon="image-rotate"
+				icon={reset}
 				description={__("Change all heading blocks to the selected level.", 'mrw-post-cleanup-utilities')}
 			>
 				<SelectControl
@@ -83,7 +83,7 @@ const CleanupUtilitiesSidebar = () => {
 			<SidebarPanelSection
 				name="mrw-strip-underlines"
 				title={__("Strip Underlines", 'mrw-post-cleanup-utilities')}
-				icon="editor-underline"
+				icon={formatUnderline}
 				description={__("Remove all underlines created by either the <u> element or inline styles.", 'mrw-post-cleanup-utilities')}
 				>
 				<StripUnderlinesButton />
@@ -101,7 +101,7 @@ const CleanupUtilitiesSidebar = () => {
 			<SidebarPanelSection
 				name="mrw-remove-nbsps"
 				title={__("Remove Non-breaking Spaces", 'mrw-post-cleanup-utilities')}
-				icon="button"
+				icon={homeButton}
 				description={__("Remove the &nbsp; character that can result in double-spaces or undesired text wrapping.", 'mrw-post-cleanup-utilities')}
 				>
 				<RemoveNBSPsButton />

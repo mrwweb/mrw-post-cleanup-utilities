@@ -1,6 +1,7 @@
 /* WordPress Dependencies */
 import { __ } from "@wordpress/i18n";
 import { createBlock } from "@wordpress/blocks";
+import { heading } from "@wordpress/icons";
 
 /* Internal Dependencies */
 import MultiBlockTransformButton from "../components/multi-block-transform-button";
@@ -45,7 +46,7 @@ export default function FixFakeHeadingsButton(attributes) {
 	return (
 		<MultiBlockTransformButton
 			label={__("Fix Fake Headings", 'mrw-post-cleanup-utilities')}
-			icon="heading"
+			icon={heading}
 			blockTest={isFakeHeading}
 			blockTransform={convertParagraphToHeading}
 		/>
