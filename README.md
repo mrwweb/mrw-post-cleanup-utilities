@@ -1,6 +1,6 @@
 # MRW Post Cleanup Utilities
 
-v0.3.1
+v0.4.0
 
 Mark Root-Wiley, [MRW Web Design](https://MRWweb.com)
 
@@ -19,6 +19,7 @@ A WordPress plugin with useful tools to transform blocks and post content for mo
 - Strip all underline styles from the post
 - Remove all "hard" linebreaks (the `<br>` tag)
 - Replace all non-breaking spaces (`&nbsp;`) with regular spaces
+- Convert selected blocks to Title Case or Sentence case
 
 ## Installation
 
@@ -44,7 +45,15 @@ Maybe! See the existing [list of issues](https://github.com/mrwweb/mrw-post-clea
 
 ## Changelog
 
-### 0.3.1 (April 9, 2025)
+### 0.4.0 (10 Oct, 2025)
+
+- New feature: Convert selected blocks to "Title Case" or "Sentence case" (#5)
+- Introduce new <SelectedBlocksTransformButton> compontent to handle transformations to selected blocks
+- Simplify block content selection for better readability and reliability
+- Only make calls to editor store when actually clicking a button
+- Switch from dashicons to @wordpress/icons
+
+### 0.3.1 (9 Apr, 2025)
 
 - Fix "Fake Headings" that contain styles (#17)
 - Add heading for Git Updater plugin (#14)

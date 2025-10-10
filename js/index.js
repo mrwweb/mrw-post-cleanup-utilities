@@ -33,6 +33,101 @@ const formatCapitalize = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MOD
 
 /***/ }),
 
+/***/ "./node_modules/@wordpress/icons/build-module/library/format-underline.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/format-underline.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/**
+ * WordPress dependencies
+ */
+
+
+const formatUnderline = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.Path, {
+    d: "M7 18v1h10v-1H7zm5-2c1.5 0 2.6-.4 3.4-1.2.8-.8 1.1-2 1.1-3.5V5H15v5.8c0 1.2-.2 2.1-.6 2.8-.4.7-1.2 1-2.4 1s-2-.3-2.4-1c-.4-.7-.6-1.6-.6-2.8V5H7.5v6.2c0 1.5.4 2.7 1.1 3.5.8.9 1.9 1.3 3.4 1.3z"
+  })
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (formatUnderline);
+//# sourceMappingURL=format-underline.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@wordpress/icons/build-module/library/heading.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/heading.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/**
+ * WordPress dependencies
+ */
+
+
+const heading = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.Path, {
+    d: "M6 5V18.5911L12 13.8473L18 18.5911V5H6Z"
+  })
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (heading);
+//# sourceMappingURL=heading.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@wordpress/icons/build-module/library/home-button.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/home-button.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/**
+ * WordPress dependencies
+ */
+
+
+const homeButton = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.Path, {
+    fillRule: "evenodd",
+    clipRule: "evenodd",
+    d: "M4.25 7A2.75 2.75 0 0 1 7 4.25h10A2.75 2.75 0 0 1 19.75 7v10A2.75 2.75 0 0 1 17 19.75H7A2.75 2.75 0 0 1 4.25 17V7ZM7 5.75c-.69 0-1.25.56-1.25 1.25v10c0 .69.56 1.25 1.25 1.25h10c.69 0 1.25-.56 1.25-1.25V7c0-.69-.56-1.25-1.25-1.25H7Z"
+  })
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (homeButton);
+//# sourceMappingURL=home-button.js.map
+
+/***/ }),
+
 /***/ "./node_modules/@wordpress/icons/build-module/library/keyboard-return.js":
 /*!*******************************************************************************!*\
   !*** ./node_modules/@wordpress/icons/build-module/library/keyboard-return.js ***!
@@ -126,6 +221,37 @@ const paragraph = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__
 
 /***/ }),
 
+/***/ "./node_modules/@wordpress/icons/build-module/library/reset.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/reset.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/**
+ * WordPress dependencies
+ */
+
+
+const reset = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.Path, {
+    d: "M7 11.5h10V13H7z"
+  })
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (reset);
+//# sourceMappingURL=reset.js.map
+
+/***/ }),
+
 /***/ "./node_modules/@wordpress/icons/build-module/library/title.js":
 /*!*********************************************************************!*\
   !*** ./node_modules/@wordpress/icons/build-module/library/title.js ***!
@@ -154,6 +280,37 @@ const title = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx
 });
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (title);
 //# sourceMappingURL=title.js.map
+
+/***/ }),
+
+/***/ "./node_modules/@wordpress/icons/build-module/library/tool.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@wordpress/icons/build-module/library/tool.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/primitives */ "@wordpress/primitives");
+/* harmony import */ var _wordpress_primitives__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
+/**
+ * WordPress dependencies
+ */
+
+
+const tool = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.SVG, {
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 24 24",
+  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_wordpress_primitives__WEBPACK_IMPORTED_MODULE_0__.Path, {
+    d: "M14.103 7.128l2.26-2.26a4 4 0 00-5.207 4.804L5.828 15a2 2 0 102.828 2.828l5.329-5.328a4 4 0 004.804-5.208l-2.261 2.26-1.912-.512-.513-1.912zm-7.214 9.64a.5.5 0 11.707-.707.5.5 0 01-.707.707z"
+  })
+});
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (tool);
+//# sourceMappingURL=tool.js.map
 
 /***/ }),
 
@@ -263,10 +420,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_multi_block_transform_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/multi-block-transform-button */ "./src/js/components/multi-block-transform-button.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/heading.js");
+/* harmony import */ var _components_multi_block_transform_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/multi-block-transform-button */ "./src/js/components/multi-block-transform-button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
 /* WordPress Dependencies */
+
 
 
 
@@ -301,9 +460,9 @@ function FixFakeHeadingsButton(attributes) {
     });
     return newBlock;
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_multi_block_transform_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_multi_block_transform_button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Fix Fake Headings", 'mrw-post-cleanup-utilities'),
-    icon: "heading",
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_2__["default"],
     blockTest: isFakeHeading,
     blockTransform: convertParagraphToHeading
   });
@@ -407,10 +566,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/editor-find-replace-button */ "./src/js/components/editor-find-replace-button.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/home-button.js");
+/* harmony import */ var _components_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/editor-find-replace-button */ "./src/js/components/editor-find-replace-button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 /* WordPress Dependencies */
+
 
 
 /* Internal Dependencies */
@@ -420,9 +581,9 @@ function RemoveNBSPsButton() {
   function removeNBSPs(postContent) {
     return postContent.replace(/&nbsp;/gi, ' ');
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
     buttonText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Non-breaking Spaces', 'mrw-post-cleanup-utilities'),
-    buttonIcon: 'button',
+    buttonIcon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__["default"],
     contentTransform: removeNBSPs
   });
 }
@@ -443,10 +604,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _components_multi_block_transform_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/multi-block-transform-button */ "./src/js/components/multi-block-transform-button.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/reset.js");
+/* harmony import */ var _components_multi_block_transform_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/multi-block-transform-button */ "./src/js/components/multi-block-transform-button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__);
 /* WordPress Dependencies */
+
 
 
 
@@ -468,9 +631,9 @@ function ResetHeadingLevelsButton(attributes) {
     });
     return newBlock;
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_multi_block_transform_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_multi_block_transform_button__WEBPACK_IMPORTED_MODULE_3__["default"], {
     label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)("Make all headings H%1$ds", 'mrw-post-cleanup-utilities'), level),
-    icon: "image-rotate",
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_2__["default"],
     blockTest: isHeadingButNotSelectedLevel,
     blockTransform: resetHeadingLevel
   });
@@ -490,10 +653,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/editor-find-replace-button */ "./src/js/components/editor-find-replace-button.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/format-underline.js");
+/* harmony import */ var _components_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/editor-find-replace-button */ "./src/js/components/editor-find-replace-button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 /* WordPress Dependencies */
+
 
 
 /* Internal Dependencies */
@@ -504,9 +669,9 @@ function StripUnderlinesButton() {
   function stripUnderlines(postContent) {
     return postContent.replace(/<u>/gi, '').replace(/<\\u>/gi, '').replace(/<span style="text-decoration: underline;">(.*)<\/span>/gi, '$1').replace(/text-decoration: underline;/gi, '');
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_components_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
     buttonText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Strip Underlines', 'mrw-post-cleanup-utilities'),
-    buttonIcon: 'editor-underline',
+    buttonIcon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__["default"],
     contentTransform: stripUnderlines
   });
 }
@@ -628,7 +793,7 @@ function MultiBlockTransformButton(props) {
     getBlocks
   } = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.useSelect)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.store);
 
-  /* /**
+  /**
    * Function that 1) tests a block to see if it meets a specific criteria, and 2) if it does, transforms it via the second function. It is recursive and will go through nested blocks utnil all blocks have been tested and possibly transformed.
    *
    * @param {object} block a WordPress block editor block object
@@ -813,10 +978,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _buttons_convert_title_case__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./buttons/convert-title-case */ "./src/js/buttons/convert-title-case.js");
 /* harmony import */ var _buttons_convert_sentence_case__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./buttons/convert-sentence-case */ "./src/js/buttons/convert-sentence-case.js");
 /* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/format-capitalize.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/keyboard-return.js");
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/level-up.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/format-underline.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/heading.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/home-button.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/keyboard-return.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/level-up.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/reset.js");
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/tool.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__);
 /**
  * The custom sidebar containing all utilities. Each utility is put into its own SidebarPanelSection component.
  * 
@@ -854,70 +1024,70 @@ const CleanupUtilitiesSidebar = () => {
     label: "4",
     value: 4
   }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(_wordpress_editor__WEBPACK_IMPORTED_MODULE_1__.PluginSidebar, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsxs)(_wordpress_editor__WEBPACK_IMPORTED_MODULE_1__.PluginSidebar, {
     name: "mrw-post-cleanup-utilities",
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Post Cleanup Utilities", 'mrw-post-cleanup-utilities'),
-    icon: "admin-tools",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(_components_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_20__["default"],
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsxs)(_components_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_4__["default"], {
       name: "mrw-fix-headings",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Fix Fake Headings", 'mrw-post-cleanup-utilities'),
-      icon: "heading",
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__["default"],
       description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Turns Paragraphs blocks containing only bold text into Heading blocks of the selected level.", 'mrw-post-cleanup-utilities'),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading Level", 'mrw-post-cleanup-utilities'),
         value: fakeHeadingsLevel,
         options: headingLevels,
         onChange: value => setFakeHeadingsLevel(parseInt(value)),
         __next40pxDefaultSize: true,
         __nextHasNoMarginBottom: true
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_buttons_fix_fake_headings__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_buttons_fix_fake_headings__WEBPACK_IMPORTED_MODULE_5__["default"], {
         level: fakeHeadingsLevel
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(_components_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsxs)(_components_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_4__["default"], {
       name: "mrw-reset-headings",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Reset Heading Levels", 'mrw-post-cleanup-utilities'),
-      icon: "image-rotate",
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_19__["default"],
       description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Change all heading blocks to the selected level.", 'mrw-post-cleanup-utilities'),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.SelectControl, {
         label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Heading Level", 'mrw-post-cleanup-utilities'),
         value: resetHeadingsLevel,
         options: headingLevels,
         onChange: value => setResetHeadingsLevel(parseInt(value)),
         __next40pxDefaultSize: true,
         __nextHasNoMarginBottom: true
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_buttons_reset_heading_levels__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_buttons_reset_heading_levels__WEBPACK_IMPORTED_MODULE_6__["default"], {
         level: resetHeadingsLevel
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_components_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_4__["default"], {
       name: "mrw-promote-headings",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Promote Heading Levels", 'mrw-post-cleanup-utilities'),
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_15__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_18__["default"],
       description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Move every heading up the hierarchy by one level (e.g. H3 becomes H2). Change is capped at H2.", 'mrw-post-cleanup-utilities'),
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_buttons_promote_heading_levels__WEBPACK_IMPORTED_MODULE_7__["default"], {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_buttons_promote_heading_levels__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_components_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_4__["default"], {
       name: "mrw-strip-underlines",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Strip Underlines", 'mrw-post-cleanup-utilities'),
-      icon: "editor-underline",
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"],
       description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Remove all underlines created by either the <u> element or inline styles.", 'mrw-post-cleanup-utilities'),
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_buttons_strip_underlines__WEBPACK_IMPORTED_MODULE_8__["default"], {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_buttons_strip_underlines__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_components_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_4__["default"], {
       name: "mrw-remove-linebreaks",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Remove Linebreaks", 'mrw-post-cleanup-utilities'),
-      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_14__["default"],
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_17__["default"],
       description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Remove all linebreaks within paragraphs, headings, etc.", 'mrw-post-cleanup-utilities'),
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_buttons_remove_linebreaks__WEBPACK_IMPORTED_MODULE_9__["default"], {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_components_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_buttons_remove_linebreaks__WEBPACK_IMPORTED_MODULE_9__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_components_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_4__["default"], {
       name: "mrw-remove-nbsps",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Remove Non-breaking Spaces", 'mrw-post-cleanup-utilities'),
-      icon: "button",
+      icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_16__["default"],
       description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Remove the &nbsp; character that can result in double-spaces or undesired text wrapping.", 'mrw-post-cleanup-utilities'),
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_buttons_remove_nbsp__WEBPACK_IMPORTED_MODULE_10__["default"], {})
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsxs)(_components_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_buttons_remove_nbsp__WEBPACK_IMPORTED_MODULE_10__["default"], {})
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsxs)(_components_sidebar_panel_section__WEBPACK_IMPORTED_MODULE_4__["default"], {
       name: "mrw-transform-casing",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Capitalization", 'mrw-post-cleanup-utilities'),
       icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_13__["default"],
       description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Convert selected block(s) to \"Sentence case\" or \"Title Case\". If you need ALL CAPS, use CSS or the Letter Case setting.", 'mrw-post-cleanup-utilities'),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_buttons_convert_title_case__WEBPACK_IMPORTED_MODULE_11__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_16__.jsx)(_buttons_convert_sentence_case__WEBPACK_IMPORTED_MODULE_12__["default"], {})]
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_buttons_convert_title_case__WEBPACK_IMPORTED_MODULE_11__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_21__.jsx)(_buttons_convert_sentence_case__WEBPACK_IMPORTED_MODULE_12__["default"], {})]
     })]
   });
 };
