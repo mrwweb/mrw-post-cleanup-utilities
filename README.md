@@ -48,10 +48,11 @@ Maybe! See the existing [list of issues](https://github.com/mrwweb/mrw-post-clea
 ### 0.4.0 (10 Oct, 2025)
 
 - New feature: Convert selected blocks to "Title Case" or "Sentence case" (#5)
-- Introduce new <SelectedBlocksTransformButton> compontent to handle transformations to selected blocks
+- Introduce new `<SelectedBlocksTransformButton />` compontent to handle transformations to selected blocks
 - Simplify block content selection for better readability and reliability
 - Only make calls to editor store when actually clicking a button
 - Switch from dashicons to @wordpress/icons
+- Resolve `<SelectControl />` component deprecation notices
 
 ### 0.3.1 (9 Apr, 2025)
 
