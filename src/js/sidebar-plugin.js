@@ -18,6 +18,9 @@ import PromoteHeadingLevelsButton from "./buttons/promote-heading-levels";
 import StripUnderlinesButton from "./buttons/strip-underlines";
 import RemoveLinebreaksButton from "./buttons/remove-linebreaks";
 import RemoveNBSPsButton from "./buttons/remove-nbsp";
+import TitleCaseButton from "./buttons/convert-title-case";
+import SentenceCaseButton from "./buttons/convert-sentence-case";
+import { formatCapitalize, keyboardReturn, levelUp } from "@wordpress/icons";
 
 const CleanupUtilitiesSidebar = () => {
 	const [fakeHeadingsLevel, setFakeHeadingsLevel] = useState(2);
@@ -45,6 +48,8 @@ const CleanupUtilitiesSidebar = () => {
 					value={fakeHeadingsLevel}
 					options={headingLevels}
 					onChange={(value) => setFakeHeadingsLevel(parseInt(value))}
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 				/>
 				<FixFakeHeadingsButton level={fakeHeadingsLevel} />
 			</SidebarPanelSection>
@@ -60,6 +65,8 @@ const CleanupUtilitiesSidebar = () => {
 					value={resetHeadingsLevel}
 					options={headingLevels}
 					onChange={(value) => setResetHeadingsLevel(parseInt(value))}
+					__next40pxDefaultSize
+					__nextHasNoMarginBottom
 				/>
 				<ResetHeadingLevelsButton level={resetHeadingsLevel} />
 			</SidebarPanelSection>
@@ -67,7 +74,7 @@ const CleanupUtilitiesSidebar = () => {
 			<SidebarPanelSection
 				name="mrw-promote-headings"
 				title={__("Promote Heading Levels", 'mrw-post-cleanup-utilities')}
-				icon="arrow-up-alt"
+				icon={levelUp}
 				description={__("Move every heading up the hierarchy by one level (e.g. H3 becomes H2). Change is capped at H2.", 'mrw-post-cleanup-utilities')}
 				>
 				<PromoteHeadingLevelsButton />
@@ -85,7 +92,7 @@ const CleanupUtilitiesSidebar = () => {
 			<SidebarPanelSection
 				name="mrw-remove-linebreaks"
 				title={__("Remove Linebreaks", 'mrw-post-cleanup-utilities')}
-				icon="editor-break"
+				icon={keyboardReturn}
 				description={__("Remove all linebreaks within paragraphs, headings, etc.", 'mrw-post-cleanup-utilities')}
 				>
 				<RemoveLinebreaksButton />
@@ -98,6 +105,16 @@ const CleanupUtilitiesSidebar = () => {
 				description={__("Remove the &nbsp; character that can result in double-spaces or undesired text wrapping.", 'mrw-post-cleanup-utilities')}
 				>
 				<RemoveNBSPsButton />
+			</SidebarPanelSection>
+
+			<SidebarPanelSection
+				name="mrw-transform-casing"
+				title={__("Capitalization", 'mrw-post-cleanup-utilities')}
+				icon={formatCapitalize}
+				description={__("Convert selected block(s) to \"Sentence case\" or \"Title Case\". If you need ALL CAPS, use CSS or the Letter Case setting.", 'mrw-post-cleanup-utilities')}
+				>
+				<TitleCaseButton />
+				<SentenceCaseButton />
 			</SidebarPanelSection>
 
 		</PluginSidebar>
