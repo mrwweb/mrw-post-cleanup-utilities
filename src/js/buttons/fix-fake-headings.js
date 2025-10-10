@@ -1,6 +1,6 @@
 /* WordPress Dependencies */
 import { __ } from "@wordpress/i18n";
-import { createBlock, getBlockContent } from "@wordpress/blocks";
+import { createBlock } from "@wordpress/blocks";
 
 /* Internal Dependencies */
 import MultiBlockTransformButton from "../components/multi-block-transform-button";

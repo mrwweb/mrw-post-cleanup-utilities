@@ -1,6 +1,7 @@
 /* WordPress Dependencies */
 import { __ } from "@wordpress/i18n";
-import { createBlock, getBlockContent } from "@wordpress/blocks";
+import { createBlock } from "@wordpress/blocks";
+import { levelUp } from "@wordpress/icons";
 
 /* Internal Dependencies */
 import MultiBlockTransformButton from "../components/multi-block-transform-button";
@@ -23,7 +24,7 @@ export default function PromoteHeadingLevels(attributes) {
 	return (
 		<MultiBlockTransformButton
 			label={__("Promote Headings", 'mrw-post-cleanup-utilities')}
-			icon="arrow-up-alt"
+			icon={levelUp}
 			blockTest={isHeadingButNot2}
 			blockTransform={PromoteHeadingLevel}
 		/>

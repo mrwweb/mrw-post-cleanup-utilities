@@ -1,24 +1,21 @@
-import { useSelect, useDispatch } from "@wordpress/data";
+
+import { useDispatch, useSelect } from "@wordpress/data";
 import { store as blockEditorStore } from "@wordpress/block-editor";
 import { Button } from "@wordpress/components";
 
-/**
- * The <MultiBlockTransformButton /> component creates a button that, when clicked, will recursively test all blocks against a criteria function and transform them via a transform function if they meet the criteria.
- * 
- * Note: the current behavior means that each transformed block creates a new undo/history point for the editor
- * 
- * @param {*} props Expects four props, a blockTest function that accepts a block object and returns true or false, a blockTransform function that accepts a block object and returns a new block object, the label for the button's label, an icon (valid dashicon string)
- */
-export default function MultiBlockTransformButton(props) {
-    const { blockTest, blockTransform, label, icon } = props;
+/* import recurseAndTransform from "../utlities/recurse-and-transform"; */
 
-    /*
-    Lesson learned: React hooks must be called in the root of the functional compontent!
-	See: https://react.dev/warnings/invalid-hook-call-warning#breaking-rules-of-hooks
-	and See: https://developer.wordpress.org/news/2024/03/28/how-to-work-effectively-with-the-useselect-hook/#but-call-them-outside-when-you-re-in-an-event-handler
-    */
+/**
+ * The <SelectedBlocksTransformButton /> component creates a button that, when clicked, will recursively modify the currently selected block.
+ * 
+ * 
+ * @param {*} props Expects three props, a blockTransform function that accepts a block object and returns a new block object, the label for the button's label, an icon (valid dashicon string)
+ */
+export default function SelectedBlocksTransformButton(props) {
+    const { blockTransform, blockTest, label, icon } = props;
+
     const { replaceBlock } = useDispatch(blockEditorStore);
-    const { getBlocks } = useSelect(blockEditorStore);
+    const { getSelectedBlockClientIds, getBlocksByClientId } = useSelect(blockEditorStore);
 
     /**
      * Function that 1) tests a block to see if it meets a specific criteria, and 2) if it does, transforms it via the second function. It is recursive and will go through nested blocks utnil all blocks have been tested and possibly transformed.
@@ -42,7 +39,8 @@ export default function MultiBlockTransformButton(props) {
             icon={icon}
             isDestructive={true}
             onClick={() => {
-                getBlocks().forEach((block) => recurseAndTransform(block))
+                const blocks = getBlocksByClientId(getSelectedBlockClientIds());
+                blocks.forEach((block) => recurseAndTransform(block, blockTransform, () => blocks.content))
             }}
             __nextHasNoMarginBottom={true}
             variant="secondary"
