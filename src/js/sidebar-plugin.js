@@ -20,7 +20,8 @@ import RemoveLinebreaksButton from "./buttons/remove-linebreaks";
 import RemoveNBSPsButton from "./buttons/remove-nbsp";
 import TitleCaseButton from "./buttons/convert-title-case";
 import SentenceCaseButton from "./buttons/convert-sentence-case";
-import { formatCapitalize, formatUnderline, heading, homeButton, keyboardReturn, levelUp, reset, tool } from "@wordpress/icons";
+import RemoveTargetBlankButton from "./buttons/remove-target-blank";
+import { formatCapitalize, formatUnderline, heading, homeButton, keyboardReturn, levelUp, linkOff, reset, tool } from "@wordpress/icons";
 
 const CleanupUtilitiesSidebar = () => {
 	const [fakeHeadingsLevel, setFakeHeadingsLevel] = useState(2);
@@ -115,6 +116,15 @@ const CleanupUtilitiesSidebar = () => {
 				>
 				<TitleCaseButton />
 				<SentenceCaseButton />
+			</SidebarPanelSection>
+
+			<SidebarPanelSection
+				name="mrw-remove-target-blank"
+				title={__("Remove Target Blank", 'mrw-post-cleanup-utilities')}
+				icon={linkOff}
+				description={__("Remove all target=\"_blank\" attributes from links.", 'mrw-post-cleanup-utilities')}
+				>
+				<RemoveTargetBlankButton />
 			</SidebarPanelSection>
 
 		</PluginSidebar>
