@@ -8,7 +8,7 @@
     "start": "wp-scripts start src/js/index.js --output-path=js --output-filename=index.js"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^30.25.0",
-    "@wordpress/icons": "^10.32.0"
+    "@wordpress/scripts": "^35.0.0",
+    "@wordpress/icons": "^16.0.0"
   }
 }
