@@ -20,8 +20,9 @@ import RemoveLinebreaksButton from "./buttons/remove-linebreaks";
 import RemoveNBSPsButton from "./buttons/remove-nbsp";
 import TitleCaseButton from "./buttons/convert-title-case";
 import SentenceCaseButton from "./buttons/convert-sentence-case";
+import StripBoldFromHeadingsButton from "./buttons/strip-bold-from-headings";
 import RemoveTargetBlankButton from "./buttons/remove-target-blank";
-import { formatCapitalize, formatUnderline, heading, homeButton, keyboardReturn, levelUp, linkOff, reset, tool } from "@wordpress/icons";
+import { formatBold, formatCapitalize, formatOutdent, formatUnderline, heading, homeButton, keyboardReturn, levelUp, linkOff, tool } from "@wordpress/icons";
 
 const CleanupUtilitiesSidebar = () => {
 	const [fakeHeadingsLevel, setFakeHeadingsLevel] = useState(2);
@@ -58,7 +59,7 @@ const CleanupUtilitiesSidebar = () => {
 			<SidebarPanelSection
 				name="mrw-reset-headings"
 				title={__("Reset Heading Levels", 'mrw-post-cleanup-utilities')}
-				icon={reset}
+				icon={formatOutdent}
 				description={__("Change all heading blocks to the selected level.", 'mrw-post-cleanup-utilities')}
 			>
 				<SelectControl
@@ -79,6 +80,15 @@ const CleanupUtilitiesSidebar = () => {
 				description={__("Move every heading up the hierarchy by one level (e.g. H3 becomes H2). Change is capped at H2.", 'mrw-post-cleanup-utilities')}
 				>
 				<PromoteHeadingLevelsButton />
+			</SidebarPanelSection>
+
+			<SidebarPanelSection
+				name="mrw-strip-bold-from-headings"
+				title={__("Strip Bold from Headings", 'mrw-post-cleanup-utilities')}
+				icon={formatBold}
+				description={__("Remove all bold formatting from heading blocks.", 'mrw-post-cleanup-utilities')}
+				>
+				<StripBoldFromHeadingsButton />
 			</SidebarPanelSection>
 
 			<SidebarPanelSection

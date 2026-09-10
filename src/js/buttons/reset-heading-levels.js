@@ -1,7 +1,7 @@
 /* WordPress Dependencies */
 import { createBlock, getBlockContent } from "@wordpress/blocks";
 import { __, sprintf } from "@wordpress/i18n";
-import { reset } from "@wordpress/icons";
+import { formatOutdent } from "@wordpress/icons";
 
 /* Internal Dependencies */
 import MultiBlockTransformButton from "../components/multi-block-transform-button";
@@ -25,7 +25,7 @@ export default function ResetHeadingLevelsButton(attributes) {
 	return (
 		<MultiBlockTransformButton
 			label={sprintf(__("Make all headings H%1$ds", 'mrw-post-cleanup-utilities'), level)}
-			icon={reset}
+			icon={formatOutdent}
 			blockTest={isHeadingButNotSelectedLevel}
 			blockTransform={resetHeadingLevel}
 		/>
