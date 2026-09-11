@@ -22,8 +22,9 @@ import TitleCaseButton from "./buttons/convert-title-case";
 import SentenceCaseButton from "./buttons/convert-sentence-case";
 import StripBoldFromHeadingsButton from "./buttons/strip-bold-from-headings";
 import RemoveTargetBlankButton from "./buttons/remove-target-blank";
+import ConsolidateFormattingTagsButton from "./buttons/consolidate-format-tags";
 import DeleteEmptyTextBlocksButton from "./buttons/delete-empty-text-blocks";
-import { border, formatBold, formatCapitalize, formatOutdent, formatUnderline, heading, homeButton, keyboardReturn, levelUp, linkOff, tool } from "@wordpress/icons";
+import { border, code, formatBold, formatCapitalize, formatOutdent, formatUnderline, heading, homeButton, keyboardReturn, levelUp, linkOff, tool } from "@wordpress/icons";
 
 const CleanupUtilitiesSidebar = () => {
 	const [fakeHeadingsLevel, setFakeHeadingsLevel] = useState(2);
@@ -90,6 +91,15 @@ const CleanupUtilitiesSidebar = () => {
 				description={__("Remove all bold formatting from heading blocks.", 'mrw-post-cleanup-utilities')}
 				>
 				<StripBoldFromHeadingsButton />
+			</SidebarPanelSection>
+
+			<SidebarPanelSection
+				name="mrw-consolidate-format-tags"
+				title={__("Consolidate Formatting Tags", 'mrw-post-cleanup-utilities')}
+				icon={code}
+				description={__("Merge consecutive bold, italic, and underline tags.", 'mrw-post-cleanup-utilities')}
+				>
+				<ConsolidateFormattingTagsButton />
 			</SidebarPanelSection>
 
 			<SidebarPanelSection
