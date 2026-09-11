@@ -10,7 +10,7 @@ export default function StripUnderlinesButton() {
     function stripUnderlines( postContent ) {
         return postContent
             .replace(/<u>/gi, '')
-            .replace(/<\\u>/gi, '')
+            .replace(/<\/u>/gi, '')
             .replace(/<span style="text-decoration: underline;">(.*)<\/span>/gi, '$1')
             .replace(/text-decoration: underline;/gi, '');
     }
