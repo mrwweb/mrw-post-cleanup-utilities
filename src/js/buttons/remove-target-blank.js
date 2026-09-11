@@ -1,6 +1,6 @@
 /* WordPress Dependencies */
 import { __ } from "@wordpress/i18n";
-import { linkOff } from "@wordpress/icons";
+import { external } from "@wordpress/icons";
 
 /* Internal Dependencies */
 import EditorFindReplaceButton from "../components/editor-find-replace-button";
@@ -18,7 +18,7 @@ export default function RemoveTargetBlankButton() {
 	return (
 		<EditorFindReplaceButton
             buttonText={__('Remove target="_blank"', 'mrw-post-cleanup-utilities')}
-            buttonIcon={linkOff}
+            buttonIcon={external}
             contentTransform={removeTargetBlank}
         />
 	);
