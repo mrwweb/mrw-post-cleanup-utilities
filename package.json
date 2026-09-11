@@ -12,5 +12,9 @@
     "@wordpress/icons": "^16.0.0",
     "@wordpress/prettier-config": "^4.55.0",
     "@wordpress/scripts": "^35.0.0"
+  },
+  "prettier": "@wordpress/prettier-config",
+  "dependencies": {
+    "@wordpress/i18n": "^6.28.0"
   }
 }
