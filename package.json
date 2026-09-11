@@ -8,7 +8,9 @@
     "start": "wp-scripts start src/js/index.js --output-path=js --output-filename=index.js"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^35.0.0",
-    "@wordpress/icons": "^16.0.0"
+    "@wordpress/eslint-plugin": "^26.0.0",
+    "@wordpress/icons": "^16.0.0",
+    "@wordpress/prettier-config": "^4.55.0",
+    "@wordpress/scripts": "^35.0.0"
   }
 }
