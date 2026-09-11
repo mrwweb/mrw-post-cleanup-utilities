@@ -22,7 +22,8 @@ import TitleCaseButton from "./buttons/convert-title-case";
 import SentenceCaseButton from "./buttons/convert-sentence-case";
 import StripBoldFromHeadingsButton from "./buttons/strip-bold-from-headings";
 import RemoveTargetBlankButton from "./buttons/remove-target-blank";
-import { formatBold, formatCapitalize, formatOutdent, formatUnderline, heading, homeButton, keyboardReturn, levelUp, linkOff, tool } from "@wordpress/icons";
+import DeleteEmptyTextBlocksButton from "./buttons/delete-empty-text-blocks";
+import { border, formatBold, formatCapitalize, formatOutdent, formatUnderline, heading, homeButton, keyboardReturn, levelUp, linkOff, tool } from "@wordpress/icons";
 
 const CleanupUtilitiesSidebar = () => {
 	const [fakeHeadingsLevel, setFakeHeadingsLevel] = useState(2);
@@ -130,11 +131,20 @@ const CleanupUtilitiesSidebar = () => {
 
 			<SidebarPanelSection
 				name="mrw-remove-target-blank"
-				title={__("Remove Target Blank", 'mrw-post-cleanup-utilities')}
+				title={__("Open links in same tab", 'mrw-post-cleanup-utilities')}
 				icon={linkOff}
 				description={__("Remove all target=\"_blank\" attributes from links.", 'mrw-post-cleanup-utilities')}
 				>
 				<RemoveTargetBlankButton />
+			</SidebarPanelSection>
+
+			<SidebarPanelSection
+				name="mrw-delete-empty"
+				title={__("Delete Empty Text Blocks", 'mrw-post-cleanup-utilities')}
+				icon={border}
+				description={__("Remove all empty paragraph and heading blocks.", 'mrw-post-cleanup-utilities')}
+				>
+				<DeleteEmptyTextBlocksButton />
 			</SidebarPanelSection>
 
 		</PluginSidebar>
