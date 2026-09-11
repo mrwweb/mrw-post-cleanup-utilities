@@ -36,6 +36,7 @@ export default function EditorFindReplaceButton( props ) {
             __nextHasNoMarginBottom={true}
             onClick={() => updatePost()}
             variant="secondary"
+            {...props}
             />
 	);
 }

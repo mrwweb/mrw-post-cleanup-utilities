@@ -27,6 +27,7 @@ export default function PromoteHeadingLevels(attributes) {
 			icon={levelUp}
 			blockTest={isHeadingButNot2}
 			blockTransform={PromoteHeadingLevel}
+			{...attributes}
 		/>
 	);
 }

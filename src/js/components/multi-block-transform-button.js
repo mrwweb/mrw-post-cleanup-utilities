@@ -50,6 +50,7 @@ export default function MultiBlockTransformButton(props) {
             }}
             __nextHasNoMarginBottom={true}
             variant="secondary"
+            {...props}
             />
     );
 }

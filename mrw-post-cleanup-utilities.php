@@ -24,4 +24,10 @@ function block_editor_assets() {
         $asset_file['dependencies'],
         $asset_file['version']
     );
+    wp_enqueue_style(
+        'mrw-post-cleanup-utilities-editor',
+        plugins_url( 'css/editor.css', __FILE__ ),
+        array(),
+        $asset_file['version']
+    );
 }

@@ -27,6 +27,7 @@ export default function DeleteEmptyTextBlocksButton(attributes) {
 			icon={border}
 			blockTest={isEmptyHeadingOrParagraph}
 			blockTransform={deleteBlock}
+			{...attributes}
 		/>
 	);
 }

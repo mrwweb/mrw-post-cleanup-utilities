@@ -8,7 +8,7 @@
 import { __ } from "@wordpress/i18n";
 import { PluginSidebar } from "@wordpress/editor";
 import { useState } from "@wordpress/element";
-import { SelectControl } from "@wordpress/components";
+import { Icon, PanelRow, SelectControl } from "@wordpress/components";
 
 /* Internal dependencies */
 import SidebarPanelSection from "./components/sidebar-panel-section";
@@ -20,11 +20,12 @@ import RemoveLinebreaksButton from "./buttons/remove-linebreaks";
 import RemoveNBSPsButton from "./buttons/remove-nbsp";
 import TitleCaseButton from "./buttons/convert-title-case";
 import SentenceCaseButton from "./buttons/convert-sentence-case";
+import StripEmptyLinksButton from "./buttons/strip-empty-links";
 import StripBoldFromHeadingsButton from "./buttons/strip-bold-from-headings";
 import RemoveTargetBlankButton from "./buttons/remove-target-blank";
 import ConsolidateFormattingTagsButton from "./buttons/consolidate-format-tags";
 import DeleteEmptyTextBlocksButton from "./buttons/delete-empty-text-blocks";
-import { border, code, formatBold, formatCapitalize, formatOutdent, formatUnderline, heading, homeButton, keyboardReturn, levelUp, linkOff, tool } from "@wordpress/icons";
+import { fullscreen, heading, info, link, pencil, tool } from "@wordpress/icons";
 
 const CleanupUtilitiesSidebar = () => {
 	const [fakeHeadingsLevel, setFakeHeadingsLevel] = useState(2);
@@ -42,119 +43,80 @@ const CleanupUtilitiesSidebar = () => {
 			icon={tool}
 		>
 			<SidebarPanelSection
-				name="mrw-fix-headings"
-				title={__("Fix Fake Headings", 'mrw-post-cleanup-utilities')}
+				name="mrw-headings"
+				title={__("Headings", 'mrw-post-cleanup-utilities')}
 				icon={heading}
-				description={__("Turns Paragraphs blocks containing only bold text into Heading blocks of the selected level.", 'mrw-post-cleanup-utilities')}
-			>
-				<SelectControl
-					label={__("Heading Level", 'mrw-post-cleanup-utilities')}
-					value={fakeHeadingsLevel}
-					options={headingLevels}
-					onChange={(value) => setFakeHeadingsLevel(parseInt(value))}
-					__next40pxDefaultSize
-					__nextHasNoMarginBottom
-				/>
-				<FixFakeHeadingsButton level={fakeHeadingsLevel} />
-			</SidebarPanelSection>
-
-			<SidebarPanelSection
-				name="mrw-reset-headings"
-				title={__("Reset Heading Levels", 'mrw-post-cleanup-utilities')}
-				icon={formatOutdent}
-				description={__("Change all heading blocks to the selected level.", 'mrw-post-cleanup-utilities')}
-			>
-				<SelectControl
-					label={__("Heading Level", 'mrw-post-cleanup-utilities')}
-					value={resetHeadingsLevel}
-					options={headingLevels}
-					onChange={(value) => setResetHeadingsLevel(parseInt(value))}
-					__next40pxDefaultSize
-					__nextHasNoMarginBottom
-				/>
-				<ResetHeadingLevelsButton level={resetHeadingsLevel} />
-			</SidebarPanelSection>
-
-			<SidebarPanelSection
-				name="mrw-promote-headings"
-				title={__("Promote Heading Levels", 'mrw-post-cleanup-utilities')}
-				icon={levelUp}
-				description={__("Move every heading up the hierarchy by one level (e.g. H3 becomes H2). Change is capped at H2.", 'mrw-post-cleanup-utilities')}
 				>
-				<PromoteHeadingLevelsButton />
-			</SidebarPanelSection>
+				<PanelRow>
+					<FixFakeHeadingsButton
+						level={fakeHeadingsLevel}
+						aria-describedby="mrw-fix-fake-headings-help"
+					/>
+					<SelectControl
+						label={__("Heading Level", 'mrw-post-cleanup-utilities')}
+						value={fakeHeadingsLevel}
+						options={headingLevels}
+						onChange={(value) => setFakeHeadingsLevel(parseInt(value))}
+						hideLabelFromVision={true}
+					/>
+				</PanelRow>
+				<p className="mrw-help-text" id="mrw-fix-fake-headings-help"><Icon icon={info} size="18" /> {__("Turns Paragraphs blocks containing only bold text into Heading blocks of the selected level.", 'mrw-post-cleanup-utilities')}</p>
 
-			<SidebarPanelSection
-				name="mrw-strip-bold-from-headings"
-				title={__("Strip Bold from Headings", 'mrw-post-cleanup-utilities')}
-				icon={formatBold}
-				description={__("Remove all bold formatting from heading blocks.", 'mrw-post-cleanup-utilities')}
-				>
+				<PanelRow>
+					<ResetHeadingLevelsButton
+						level={resetHeadingsLevel}
+						aria-describedby="mrw-reset-headings-help"
+					/>
+					<SelectControl
+						label={__("Heading Level", 'mrw-post-cleanup-utilities')}
+						value={resetHeadingsLevel}
+						options={headingLevels}
+						onChange={(value) => setResetHeadingsLevel(parseInt(value))}
+						hideLabelFromVision={true}
+					/>
+				</PanelRow>
+
+				<p className="mrw-help-text" id="mrw-reset-headings-help"><Icon icon={info} size="18" /> {__("Change all heading blocks to the selected level.", 'mrw-post-cleanup-utilities')}</p>
+
+				<PromoteHeadingLevelsButton aria-describedby="mrw-promote-headings-help" />
+				<p className="mrw-help-text" id="mrw-promote-headings-help"><Icon icon={info} size="18" /> {__("Move every heading up the hierarchy by one level (e.g. H3 becomes H2). Change is capped at H2.", 'mrw-post-cleanup-utilities')}</p>
+
 				<StripBoldFromHeadingsButton />
 			</SidebarPanelSection>
 
 			<SidebarPanelSection
-				name="mrw-consolidate-format-tags"
-				title={__("Consolidate Formatting Tags", 'mrw-post-cleanup-utilities')}
-				icon={code}
-				description={__("Merge consecutive bold, italic, and underline tags.", 'mrw-post-cleanup-utilities')}
+				name="mrw-formatting"
+				title={__("Text Formatting", 'mrw-post-cleanup-utilities')}
+				icon={pencil}
 				>
-				<ConsolidateFormattingTagsButton />
-			</SidebarPanelSection>
-
-			<SidebarPanelSection
-				name="mrw-strip-underlines"
-				title={__("Strip Underlines", 'mrw-post-cleanup-utilities')}
-				icon={formatUnderline}
-				description={__("Remove all underlines created by either the <u> element or inline styles.", 'mrw-post-cleanup-utilities')}
-				>
+				<ConsolidateFormattingTagsButton
+					aria-describedby="mrw-conslidate-formatting-help"
+				/>
+				<p className="mrw-help-text" id="mrw-conslidate-formatting-help"><Icon icon={info} size="18" /> {__("Merges consecutive bold, italic, and underline tags.", 'mrw-post-cleanup-utilities')}</p>
 				<StripUnderlinesButton />
-			</SidebarPanelSection>
-
-			<SidebarPanelSection
-				name="mrw-remove-linebreaks"
-				title={__("Remove Linebreaks", 'mrw-post-cleanup-utilities')}
-				icon={keyboardReturn}
-				description={__("Remove all linebreaks within paragraphs, headings, etc.", 'mrw-post-cleanup-utilities')}
-				>
-				<RemoveLinebreaksButton />
-			</SidebarPanelSection>
-
-			<SidebarPanelSection
-				name="mrw-remove-nbsps"
-				title={__("Remove Non-breaking Spaces", 'mrw-post-cleanup-utilities')}
-				icon={homeButton}
-				description={__("Remove the &nbsp; character that can result in double-spaces or undesired text wrapping.", 'mrw-post-cleanup-utilities')}
-				>
-				<RemoveNBSPsButton />
-			</SidebarPanelSection>
-
-			<SidebarPanelSection
-				name="mrw-transform-casing"
-				title={__("Capitalization", 'mrw-post-cleanup-utilities')}
-				icon={formatCapitalize}
-				description={__("Convert selected block(s) to \"Sentence case\" or \"Title Case\". If you need ALL CAPS, use CSS or the Letter Case setting.", 'mrw-post-cleanup-utilities')}
-				>
 				<TitleCaseButton />
 				<SentenceCaseButton />
 			</SidebarPanelSection>
 
 			<SidebarPanelSection
-				name="mrw-remove-target-blank"
-				title={__("Open links in same tab", 'mrw-post-cleanup-utilities')}
-				icon={linkOff}
-				description={__("Remove all target=\"_blank\" attributes from links.", 'mrw-post-cleanup-utilities')}
+				name="mrw-whitespace"
+				title={__("Whitespace", 'mrw-post-cleanup-utilities')}
+				icon={fullscreen}
 				>
-				<RemoveTargetBlankButton />
+				<RemoveNBSPsButton />
+				<RemoveLinebreaksButton />
+				<DeleteEmptyTextBlocksButton aria-describedby="mrw-empty-text-blocks-help" />
+				<p className="mrw-help-text" id="mrw-empty-text-blocks-help"><Icon icon={info} size="18" /> {__("Deletes Paragraphs and Headings that are empty or only contain whitespace.", 'mrw-post-cleanup-utilities')}</p>
 			</SidebarPanelSection>
 
 			<SidebarPanelSection
-				name="mrw-delete-empty"
-				title={__("Delete Empty Text Blocks", 'mrw-post-cleanup-utilities')}
-				icon={border}
-				description={__("Remove all empty paragraph and heading blocks.", 'mrw-post-cleanup-utilities')}
+				name="mrw-links"
+				title={__("Links", 'mrw-post-cleanup-utilities')}
+				icon={link}
+				description={__("Remove all target=\"_blank\" attributes from links.", 'mrw-post-cleanup-utilities')}
 				>
-				<DeleteEmptyTextBlocksButton />
+				<StripEmptyLinksButton />
+				<RemoveTargetBlankButton />
 			</SidebarPanelSection>
 
 		</PluginSidebar>

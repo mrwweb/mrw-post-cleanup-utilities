@@ -23,7 +23,7 @@ export default function SidebarPanelSection( props ) {
                     flexDirection: "column",
                 }}
             >
-                <p>{description}</p>
+                {description && <p>{description}</p>}
 
                 {children}
 

@@ -1,5 +1,5 @@
 /* WordPress Dependencies */
-import { __ } from "@wordpress/i18n";
+import { __, sprintf } from "@wordpress/i18n";
 import { createBlock } from "@wordpress/blocks";
 import { heading } from "@wordpress/icons";
 
@@ -7,7 +7,8 @@ import { heading } from "@wordpress/icons";
 import MultiBlockTransformButton from "../components/multi-block-transform-button";
 
 export default function FixFakeHeadingsButton(attributes) {
-	let { level } = attributes;
+	let { level } = attributes,
+		levelString = level;
 	if (level === 2) {
 		level = undefined;
 	}
@@ -45,10 +46,11 @@ export default function FixFakeHeadingsButton(attributes) {
 
 	return (
 		<MultiBlockTransformButton
-			label={__("Fix Fake Headings", 'mrw-post-cleanup-utilities')}
+			label={sprintf(__("Make Fake Headings H%1$ds", 'mrw-post-cleanup-utilities'), levelString)}
 			icon={heading}
 			blockTest={isFakeHeading}
 			blockTransform={convertParagraphToHeading}
+			{...attributes}
 		/>
 	);
 }
