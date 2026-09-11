@@ -16,6 +16,7 @@ import FixFakeHeadingsButton from "./buttons/fix-fake-headings";
 import ResetHeadingLevelsButton from "./buttons/reset-heading-levels";
 import PromoteHeadingLevelsButton from "./buttons/promote-heading-levels";
 import StripUnderlinesButton from "./buttons/strip-underlines";
+import NoDoubleSpaceButton from "./buttons/double-space-to-single-space";
 import RemoveLinebreaksButton from "./buttons/remove-linebreaks";
 import RemoveNBSPsButton from "./buttons/remove-nbsp";
 import TitleCaseButton from "./buttons/convert-title-case";
@@ -103,6 +104,7 @@ const CleanupUtilitiesSidebar = () => {
 				title={__("Whitespace", 'mrw-post-cleanup-utilities')}
 				icon={fullscreen}
 				>
+				<NoDoubleSpaceButton />
 				<RemoveNBSPsButton />
 				<RemoveLinebreaksButton />
 				<DeleteEmptyTextBlocksButton aria-describedby="mrw-empty-text-blocks-help" />
