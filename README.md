@@ -1,6 +1,6 @@
 # MRW Post Cleanup Utilities
 
-v0.4.0
+v0.5.0
 
 Mark Root-Wiley, [MRW Web Design](https://MRWweb.com)
 
@@ -13,13 +13,22 @@ A WordPress plugin with useful tools to transform blocks and post content for mo
 
 ## Features
 
-- Detect fake headings and convert to real heading blocks at a selected level
-- Set all heading blocks to one level
-- Promote all heading blocks "up" a level in the hiearchy (e.g. H3 to H2)
-- Strip all underline styles from the post
-- Remove all "hard" linebreaks (the `<br>` tag)
-- Replace all non-breaking spaces (`&nbsp;`) with regular spaces
-- Convert selected blocks to Title Case or Sentence case
+- **Headings**
+  - Detect fake headings and convert to real heading blocks at a selected level
+  - Set all heading blocks to one level
+  - Promote all heading blocks "up" a level in the hiearchy (e.g. H3 to H2), capped at H2
+  - Remove bolding from headings
+- **Text formatting**
+  - Strip all underline styles from the post
+  - Convert selected blocks to Title Case or Sentence case (Beta)
+- **Whitespace**
+  - Remove double-spacing
+  - Remove all "hard" linebreaks (the `<br>` tag)
+  - Replace all non-breaking spaces (`&nbsp;`) with regular spaces
+  - Delete empty paragraph and heading blocks
+- **Links**
+  - Remove empty links (no content other than whitespace)
+  - Remove `target="_blank"` from all links
 
 ## Installation
 
@@ -33,7 +42,7 @@ wp plugin install https://github.com/mrwweb/mrw-post-cleanup-utilities/archive/m
 
 ### Where are the utilities?
 
-All utilities are in a custom block editor sidebar. To open it, click the wrench icon in the top-right corner of the block editor in the same row of buttons as the "Publish" button.
+All utilities are in a custom block editor sidebar. To open it, click the wrench ("Tool") icon in the top-right corner of the block editor in the same row of buttons as the "Publish" button.
 
 ### Where did the sidebar go? / Help, I lost the sidebar!
 
@@ -44,6 +53,20 @@ It's possible to remove the wrench icon by clicking the star icon in the top-rig
 Maybe! See the existing [list of issues](https://github.com/mrwweb/mrw-post-cleanup-utilities/issues). You can help by leaving a comment or reaction on an existing issue, opening a new one, or even sponsoring work on a feature you care about.
 
 ## Changelog
+
+### 0.5.0 (15 Sept, 2026)
+
+- New sidebar design groups buttons by type into 4 collapsible sections.
+- New buttons! (Shoutouts to @cbirdsong and @cparkinson for suggestions.)
+  - Remove double space for single space (#22)
+  - Remove bold from headings (#20)
+  - Conslidate adjacent formatting tags into single tag (#26)
+  - Remove empty links (e.g. `<a href="…"></a>`) (#25)
+  - Remove `target="_blank"` from all links
+  - Delete empty paragraph and heading blocks (#11)
+- Allow the `MultiBlockTransformButton` component to delete a plugin in addition to replacing it
+- Fix: Ensure closing `</u>` tag correctly removed (probably never encountered)
+- Code cleanup and formatting
 
 ### 0.4.0 (10 Oct, 2025)
 

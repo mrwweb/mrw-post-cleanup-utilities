@@ -5,10 +5,9 @@
  * Author:          Mark Root-Wiley, MRW Web Design
  * Author URI:      https://MRWweb.com
  * Text Domain:     mrw-post-cleanup-utilities
- * Version:         0.4.0
+ * Version:         0.5.0
  * GitHub Plugin URI: mrwweb/mrw-post-cleanup-utilities
  * Primary Branch:  main
- * 
  *
  * @package         MRW_Post_Cleanup_Utilities
  */
@@ -16,12 +15,24 @@
 namespace MRW\Post_Cleanup_Utilities;
 
 add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\block_editor_assets' );
+/**
+ * Enqueue the script and styles
+ *
+ * @return void
+ */
 function block_editor_assets() {
-    $asset_file = include plugin_dir_path( __FILE__ ) . 'js/index.asset.php';
-    wp_enqueue_script(
-        'mrw-post-cleanup-utilities-editor',
-        plugins_url( 'js/index.js', __FILE__ ),
-        $asset_file['dependencies'],
-        $asset_file['version']
-    );
+	$asset_file = include plugin_dir_path( __FILE__ ) . 'js/index.asset.php';
+	wp_enqueue_script(
+		'mrw-post-cleanup-utilities-editor',
+		plugins_url( 'js/index.js', __FILE__ ),
+		$asset_file['dependencies'],
+		$asset_file['version'],
+		true
+	);
+	wp_enqueue_style(
+		'mrw-post-cleanup-utilities-editor',
+		plugins_url( 'css/editor.css', __FILE__ ),
+		array(),
+		$asset_file['version']
+	);
 }

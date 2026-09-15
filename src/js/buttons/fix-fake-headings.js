@@ -1,54 +1,61 @@
 /* WordPress Dependencies */
-import { __ } from "@wordpress/i18n";
-import { createBlock } from "@wordpress/blocks";
-import { heading } from "@wordpress/icons";
+import { __, sprintf } from '@wordpress/i18n';
+import { createBlock } from '@wordpress/blocks';
+import { heading } from '@wordpress/icons';
 
 /* Internal Dependencies */
-import MultiBlockTransformButton from "../components/multi-block-transform-button";
+import MultiBlockTransformButton from '../components/multi-block-transform-button';
 
-export default function FixFakeHeadingsButton(attributes) {
+export default function FixFakeHeadingsButton( attributes ) {
 	let { level } = attributes;
-	if (level === 2) {
+	const levelString = level;
+	if ( level === 2 ) {
 		level = undefined;
 	}
 
-	function isFakeHeading(block) {
-		if (block?.name !== "core/paragraph") {
+	function isFakeHeading( block ) {
+		if ( block?.name !== 'core/paragraph' ) {
 			return false;
 		}
 
 		const blockContent = block.attributes.content.trim();
 
-		if (blockContent === undefined) {
+		if ( blockContent === undefined ) {
 			return false;
 		}
 
-		const startsWithBold = (blockContent.match(/^<strong>/g) || []).length === 1;
+		const startsWithBold =
+			( blockContent.match( /^<strong>/g ) || [] ).length === 1;
 		const endsWithBold =
-			(blockContent.match(/<\/strong>$/g) || []).length === 1;
+			( blockContent.match( /<\/strong>$/g ) || [] ).length === 1;
 		const onlyOneBold =
-			(blockContent.match(/<\/strong>/g) || []).length === 1;
+			( blockContent.match( /<\/strong>/g ) || [] ).length === 1;
 
 		return startsWithBold && endsWithBold && onlyOneBold;
 	}
 
-	function convertParagraphToHeading(block) {
-		const newBlock = createBlock("core/heading", {
+	function convertParagraphToHeading( block ) {
+		const newBlock = createBlock( 'core/heading', {
 			...block.attributes,
 			content: block.attributes.content
-				.replace(/^<strong>/, "")
-				.replace(/<\/strong>$/, ""),
+				.replace( /^<strong>/, '' )
+				.replace( /<\/strong>$/, '' ),
 			level,
-		});
+		} );
 		return newBlock;
 	}
 
 	return (
 		<MultiBlockTransformButton
-			label={__("Fix Fake Headings", 'mrw-post-cleanup-utilities')}
-			icon={heading}
-			blockTest={isFakeHeading}
-			blockTransform={convertParagraphToHeading}
+			label={ sprintf(
+				/* translators: %1$d: heading level. */
+				__( 'Make Fake Headings H%1$ds', 'mrw-post-cleanup-utilities' ),
+				levelString
+			) }
+			icon={ heading }
+			blockTest={ isFakeHeading }
+			blockTransform={ convertParagraphToHeading }
+			{ ...attributes }
 		/>
 	);
 }
