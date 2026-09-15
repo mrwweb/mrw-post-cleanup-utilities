@@ -1,6 +1,6 @@
 {
   "name": "mrw-post-cleanup-utilities",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "main": "index.js",
   "author": "Mark Root-Wiley, MRW Web Design",
   "authorURI": "https://MRWweb.com",
@@ -13,8 +13,5 @@
     "@wordpress/prettier-config": "^4.55.0",
     "@wordpress/scripts": "^35.0.0"
   },
-  "prettier": "@wordpress/prettier-config",
-  "dependencies": {
-    "@wordpress/i18n": "^6.28.0"
-  }
+  "prettier": "@wordpress/prettier-config"
 }
