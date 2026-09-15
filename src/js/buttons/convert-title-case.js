@@ -19,7 +19,7 @@ export default function TitleCaseButton() {
 	return (
 		<SelectedBlocksTransformButton
 			label={ __(
-				'Convert to Title Case',
+				'Convert to Title Case [BETA]',
 				'mrw-post-cleanup-utilities'
 			) }
 			icon={ title }

@@ -19,7 +19,7 @@ export default function SentenceCaseButton() {
 	return (
 		<SelectedBlocksTransformButton
 			label={ __(
-				'Convert to Sentence Case',
+				'Convert to Sentence Case [BETA]',
 				'mrw-post-cleanup-utilities'
 			) }
 			icon={ paragraph }
