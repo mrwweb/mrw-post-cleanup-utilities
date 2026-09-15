@@ -22,7 +22,8 @@ function block_editor_assets() {
         'mrw-post-cleanup-utilities-editor',
         plugins_url( 'js/index.js', __FILE__ ),
         $asset_file['dependencies'],
-        $asset_file['version']
+		$asset_file['version'],
+		true
     );
     wp_enqueue_style(
         'mrw-post-cleanup-utilities-editor',
