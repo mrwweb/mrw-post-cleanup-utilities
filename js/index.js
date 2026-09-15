@@ -75,7 +75,7 @@ function SentenceCaseButton() {
     return newBlock;
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_selected_blocks_transform_button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Convert to Sentence Case', 'mrw-post-cleanup-utilities'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Convert to Sentence Case [BETA]', 'mrw-post-cleanup-utilities'),
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_2__["default"],
     blockTransform: convertToSentenceCase,
     blockTest: () => true
@@ -121,7 +121,7 @@ function TitleCaseButton() {
     return newBlock;
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_components_selected_blocks_transform_button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Convert to Title Case', 'mrw-post-cleanup-utilities'),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Convert to Title Case [BETA]', 'mrw-post-cleanup-utilities'),
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_2__["default"],
     blockTransform: convertToTitleCase,
     blockTest: () => true
@@ -271,7 +271,8 @@ function FixFakeHeadingsButton(attributes) {
     return newBlock;
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_multi_block_transform_button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Make Fake Headings H%1$ds', 'mrw-post-cleanup-utilities'), levelString),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.sprintf)(/* translators: %1$d: heading level. */
+    (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Make Fake Headings H%1$ds', 'mrw-post-cleanup-utilities'), levelString),
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_2__["default"],
     blockTest: isFakeHeading,
     blockTransform: convertParagraphToHeading,
@@ -330,6 +331,42 @@ function PromoteHeadingLevels(attributes) {
 
 /***/ },
 
+/***/ "./src/js/buttons/remove-empty-links.js"
+/*!**********************************************!*\
+  !*** ./src/js/buttons/remove-empty-links.js ***!
+  \**********************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RemoveEmptyLinksButton)
+/* harmony export */ });
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/link-off.mjs");
+/* harmony import */ var _components_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/editor-find-replace-button */ "./src/js/components/editor-find-replace-button.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+/* WordPress Dependencies */
+
+
+
+/* Internal Dependencies */
+
+
+function RemoveEmptyLinksButton() {
+  function removeEmptyLinks(postContent) {
+    return postContent.replace(/<a.+>(\s*)<\/a>/gi, '$1');
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    buttonText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Empty Links', 'mrw-post-cleanup-utilities'),
+    buttonIcon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__["default"],
+    contentTransform: removeEmptyLinks
+  });
+}
+
+/***/ },
+
 /***/ "./src/js/buttons/remove-linebreaks.js"
 /*!*********************************************!*\
   !*** ./src/js/buttons/remove-linebreaks.js ***!
@@ -358,7 +395,7 @@ function RemoveLinebreaksButton() {
     return postContent.replace(/<br>/gi, ' ').replace(/<br \/>/gi, ' ');
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    buttonText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Linebreaks', 'mrw-post-cleanup-utilities'),
+    buttonText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove Hard Linebreaks', 'mrw-post-cleanup-utilities'),
     buttonIcon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__["default"],
     contentTransform: removeLinebreaks
   });
@@ -481,7 +518,8 @@ function ResetHeadingLevelsButton(attributes) {
     return newBlock;
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_components_multi_block_transform_button__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)((0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Reset to H%1$ds', 'mrw-post-cleanup-utilities'), level),
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.sprintf)(/* translators: %1$d: heading level. */
+    (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Reset to H%1$ds', 'mrw-post-cleanup-utilities'), level),
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_2__["default"],
     blockTest: isHeadingButNotSelectedLevel,
     blockTransform: resetHeadingLevel,
@@ -533,42 +571,6 @@ function StripBoldFromHeadingsButton(attributes) {
     icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_2__["default"],
     blockTest: isHeadingWithBold,
     blockTransform: StripBoldFromHeading
-  });
-}
-
-/***/ },
-
-/***/ "./src/js/buttons/strip-empty-links.js"
-/*!*********************************************!*\
-  !*** ./src/js/buttons/strip-empty-links.js ***!
-  \*********************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ StripEmptyLinksButton)
-/* harmony export */ });
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
-/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/icons */ "./node_modules/@wordpress/icons/build-module/library/link-off.mjs");
-/* harmony import */ var _components_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/editor-find-replace-button */ "./src/js/components/editor-find-replace-button.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
-/* WordPress Dependencies */
-
-
-
-/* Internal Dependencies */
-
-
-function StripEmptyLinksButton() {
-  function stripEmptyLinks(postContent) {
-    return postContent.replace(/<a.+>(\s*)<\/a>/gi, '$1');
-  }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_components_editor_find_replace_button__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    buttonText: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Strip Empty Links', 'mrw-post-cleanup-utilities'),
-    buttonIcon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_1__["default"],
-    contentTransform: stripEmptyLinks
   });
 }
 
@@ -668,9 +670,10 @@ function EditorFindReplaceButton(props) {
     text: buttonText,
     icon: buttonIcon,
     isDestructive: true,
-    __nextHasNoMarginBottom: true,
     onClick: () => updatePost(),
     variant: "secondary",
+    __nextHasNoMarginBottom: true,
+    __next40pxDefaultSize: true,
     ...props
   });
 }
@@ -754,8 +757,9 @@ function MultiBlockTransformButton(props) {
     onClick: () => {
       getBlocks().forEach(block => recurseAndTransform(block));
     },
-    __nextHasNoMarginBottom: true,
     variant: "secondary",
+    __nextHasNoMarginBottom: true,
+    __next40pxDefaultSize: true,
     ...props
   });
 }
@@ -831,8 +835,9 @@ function SelectedBlocksTransformButton(props) {
       const blocks = getBlocksByClientId(getSelectedBlockClientIds());
       blocks.forEach(block => recurseAndTransform(block, blockTransform, () => blocks.content));
     },
+    variant: "secondary",
     __nextHasNoMarginBottom: true,
-    variant: "secondary"
+    __next40pxDefaultSize: true
   });
 }
 
@@ -877,6 +882,7 @@ function SidebarPanelSection(props) {
     initialOpen: false,
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
       style: {
+        marginBlockStart: '12px',
         display: 'flex',
         gap: '12px',
         flexDirection: 'column'
@@ -918,7 +924,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _buttons_remove_nbsp__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./buttons/remove-nbsp */ "./src/js/buttons/remove-nbsp.js");
 /* harmony import */ var _buttons_convert_title_case__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./buttons/convert-title-case */ "./src/js/buttons/convert-title-case.js");
 /* harmony import */ var _buttons_convert_sentence_case__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./buttons/convert-sentence-case */ "./src/js/buttons/convert-sentence-case.js");
-/* harmony import */ var _buttons_strip_empty_links__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./buttons/strip-empty-links */ "./src/js/buttons/strip-empty-links.js");
+/* harmony import */ var _buttons_remove_empty_links__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./buttons/remove-empty-links */ "./src/js/buttons/remove-empty-links.js");
 /* harmony import */ var _buttons_strip_bold_from_headings__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./buttons/strip-bold-from-headings */ "./src/js/buttons/strip-bold-from-headings.js");
 /* harmony import */ var _buttons_remove_target_blank__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./buttons/remove-target-blank */ "./src/js/buttons/remove-target-blank.js");
 /* harmony import */ var _buttons_consolidate_format_tags__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./buttons/consolidate-format-tags */ "./src/js/buttons/consolidate-format-tags.js");
@@ -1060,8 +1066,16 @@ const CleanupUtilitiesSidebar = () => {
       name: "mrw-links",
       title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Links', 'mrw-post-cleanup-utilities'),
       icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_22__["default"],
-      description: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Remove all target="_blank" attributes from links.', 'mrw-post-cleanup-utilities'),
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_buttons_strip_empty_links__WEBPACK_IMPORTED_MODULE_14__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_buttons_remove_target_blank__WEBPACK_IMPORTED_MODULE_16__["default"], {})]
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_buttons_remove_empty_links__WEBPACK_IMPORTED_MODULE_14__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_buttons_remove_target_blank__WEBPACK_IMPORTED_MODULE_16__["default"], {
+        "aria-describedby": "mrw-remove-target-blank-help"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsxs)("p", {
+        className: "mrw-help-text",
+        id: "mrw-remove-target-blank-help",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_25__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Icon, {
+          icon: _wordpress_icons__WEBPACK_IMPORTED_MODULE_21__["default"],
+          size: "18"
+        }), ' ', (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Removes all target="_blank" attributes from links.', 'mrw-post-cleanup-utilities')]
+      })]
     })]
   });
 };
