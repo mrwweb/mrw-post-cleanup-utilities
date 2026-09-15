@@ -6,7 +6,7 @@ Mark Root-Wiley, [MRW Web Design](https://MRWweb.com)
 
 A WordPress plugin with useful tools to transform blocks and post content for more accessible and consistent formatting.
 
-![The Post Cleanup Utilities sidebar is visible in the WordPress post editor, showing features such as Fix Fake Headings and Strip Underlines](https://github.com/mrwweb/mrw-post-cleanup-utilities/blob/main/assets/cleanup-utilities-screenshot.png?raw=true)
+![Post Cleanup Utilities sidebar in the WordPress post editor, showing expandanble sections: Headings, Text Formatting, Whitespace, Links](https://github.com/mrwweb/mrw-post-cleanup-utilities/blob/main/assets/cleanup-utilities-screenshot.png?raw=true)
 
 > [!TIP]
 > I put a lot of unpaid work into a plugin like this. I publish it for free in hopes that it helps people save time and make better websites. **If this plugin saved you time on a paid project**, please consider [sponsoring my work on the project](https://github.com/sponsors/mrwweb) or sponsoring work on a specific feature that would help you.
