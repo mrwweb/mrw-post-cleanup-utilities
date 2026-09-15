@@ -13,7 +13,7 @@ export default function RemoveLinebreaksButton() {
 	return (
 		<EditorFindReplaceButton
 			buttonText={ __(
-				'Remove Linebreaks',
+				'Remove Hard Linebreaks',
 				'mrw-post-cleanup-utilities'
 			) }
 			buttonIcon={ keyboardReturn }
