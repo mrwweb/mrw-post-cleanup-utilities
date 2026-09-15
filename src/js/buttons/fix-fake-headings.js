@@ -48,6 +48,7 @@ export default function FixFakeHeadingsButton( attributes ) {
 	return (
 		<MultiBlockTransformButton
 			label={ sprintf(
+				/* translators: %1$d: heading level. */
 				__( 'Make Fake Headings H%1$ds', 'mrw-post-cleanup-utilities' ),
 				levelString
 			) }

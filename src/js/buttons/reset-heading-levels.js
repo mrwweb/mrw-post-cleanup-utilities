@@ -27,6 +27,7 @@ export default function ResetHeadingLevelsButton( attributes ) {
 	return (
 		<MultiBlockTransformButton
 			label={ sprintf(
+				/* translators: %1$d: heading level. */
 				__( 'Reset to H%1$ds', 'mrw-post-cleanup-utilities' ),
 				level
 			) }
