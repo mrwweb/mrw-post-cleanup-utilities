@@ -52,8 +52,9 @@ export default function MultiBlockTransformButton( props ) {
 					recurseAndTransform( block )
 				);
 			} }
-			__nextHasNoMarginBottom={ true }
 			variant="secondary"
+			__nextHasNoMarginBottom
+			__next40pxDefaultSize
 			{ ...props }
 		/>
 	);

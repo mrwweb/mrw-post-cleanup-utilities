@@ -32,9 +32,10 @@ export default function EditorFindReplaceButton( props ) {
 			text={ buttonText }
 			icon={ buttonIcon }
 			isDestructive={ true }
-			__nextHasNoMarginBottom={ true }
 			onClick={ () => updatePost() }
 			variant="secondary"
+			__nextHasNoMarginBottom
+			__next40pxDefaultSize
 			{ ...props }
 		/>
 	);

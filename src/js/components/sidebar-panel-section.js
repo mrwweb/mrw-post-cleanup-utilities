@@ -18,6 +18,7 @@ export default function SidebarPanelSection( props ) {
 		>
 			<div
 				style={ {
+					marginBlockStart: '12px',
 					display: 'flex',
 					gap: '12px',
 					flexDirection: 'column',

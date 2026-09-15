@@ -21,7 +21,7 @@ import RemoveLinebreaksButton from './buttons/remove-linebreaks';
 import RemoveNBSPsButton from './buttons/remove-nbsp';
 import TitleCaseButton from './buttons/convert-title-case';
 import SentenceCaseButton from './buttons/convert-sentence-case';
-import StripEmptyLinksButton from './buttons/strip-empty-links';
+import RemoveEmptyLinksButton from './buttons/remove-empty-links';
 import StripBoldFromHeadingsButton from './buttons/strip-bold-from-headings';
 import RemoveTargetBlankButton from './buttons/remove-target-blank';
 import ConsolidateFormattingTagsButton from './buttons/consolidate-format-tags';
@@ -166,13 +166,16 @@ const CleanupUtilitiesSidebar = () => {
 				name="mrw-links"
 				title={ __( 'Links', 'mrw-post-cleanup-utilities' ) }
 				icon={ link }
-				description={ __(
-					'Remove all target="_blank" attributes from links.',
-					'mrw-post-cleanup-utilities'
-				) }
 			>
-				<StripEmptyLinksButton />
-				<RemoveTargetBlankButton />
+				<RemoveEmptyLinksButton />
+				<RemoveTargetBlankButton aria-describedby="mrw-remove-target-blank-help" />
+				<p className="mrw-help-text" id="mrw-remove-target-blank-help">
+					<Icon icon={ info } size="18" />{ ' ' }
+					{ __(
+						'Removes all target="_blank" attributes from links.',
+						'mrw-post-cleanup-utilities'
+					) }
+				</p>
 			</SidebarPanelSection>
 		</PluginSidebar>
 	);

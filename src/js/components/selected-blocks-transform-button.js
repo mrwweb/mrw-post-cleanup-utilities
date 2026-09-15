@@ -52,8 +52,9 @@ export default function SelectedBlocksTransformButton( props ) {
 					)
 				);
 			} }
-			__nextHasNoMarginBottom={ true }
 			variant="secondary"
+			__nextHasNoMarginBottom
+			__next40pxDefaultSize
 		/>
 	);
 }
